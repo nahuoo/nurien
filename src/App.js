@@ -1,12 +1,24 @@
 import React from 'react';
-import StyledApp from './assets/css/StyledApp'
+import StyleApp from './assets/css/StyledApp'
 import Navbar from './components/Navbar'
+import styled from 'styled-components'
+import ImagenHome from './components/ImagenHome'
 
-function App() {
+  
+
+
+const App = () => {
   return (
-    <StyledApp>
-      <Navbar />
-    </StyledApp>
+    <>
+  
+      
+    <Navbar />
+    <ImagenHome />
+     
+        h
+      
+  
+    </>
   );
 }
 
