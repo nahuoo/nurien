@@ -11,11 +11,14 @@ const StyledNavbar = styled.div`
     align-items: center;
     background: transparent;
     z-index: 2;
+    color: #fff;
+
     .linea-azul{
         background: #0deefe;
         height:15%;
         width: 100%;
-        margin: 1%;
+        margin-top: 1%;
+        margin-bottom: 1vh;
     }
     .linea-morada{
         background: #fc1edf;
@@ -24,7 +27,21 @@ const StyledNavbar = styled.div`
         margin:0%;
     }
     
-
+    .nav-links{
+        display: flex;
+        justify-content: flex-end; 
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        height: 50px;
+        padding: 4px;
+    }
+    .nav-links li{
+    display: inline-block;
+    padding: 0px 3px;
+    }
 `   
 
 export default StyledNavbar

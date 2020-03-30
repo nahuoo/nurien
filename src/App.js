@@ -1,24 +1,23 @@
 import React from 'react';
-import StyleApp from './assets/css/StyledApp'
 import Navbar from './components/Navbar'
 import styled from 'styled-components'
 import ImagenHome from './components/ImagenHome'
-
+import GlobalStyle from './assets/css/GlobalStyles'
   
 
 
 const App = () => {
   return (
-    <>
+    <div>
   
-      
+      <GlobalStyle />
     <Navbar />
     <ImagenHome />
      
-        h
+        
       
   
-    </>
+    </div>
   );
 }
 
