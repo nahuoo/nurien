@@ -16,7 +16,7 @@ const StyledNav = styled.nav`
   font-family: 'Lovelo Black', serif;
   font-size: 110%;
   color: white;
-  border-bottom: 1px solid white;
+  border-bottom: 0.1px solid white;
 
 .linea-azul{
     position: absolute;
@@ -101,15 +101,15 @@ const StyledNav = styled.nav`
     display: flex;
     position: fixed;
     flex-direction: column;
-    background: rgba(05, 05, 05,0.6);
+    /* background: rgba(05, 05, 05,0.6); */
+    background: black;
     top: 15vw;
-    padding: 5vw 10vw;
+    padding: 5vw 3vw;
     transition: all 0.5s ease-in;
   }
-  .ListaLink li{
-    width: 80vw;
-    text-align: center;
-    border-bottom: 1px solid white;
+  .ListaLink > li{
+    width: 92vw;
+    text-align: left;
     padding-bottom: 4vw;
     margin-bottom: 4vw; 
     padding-top: 0;
@@ -119,8 +119,8 @@ const StyledNav = styled.nav`
     padding-top: 0;
     margin-top: 0;
     text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1em;
+    /* font-weight: bold; */
     color: white;
     letter-spacing: 1pt;
     transition: all 0.2s ease 0s;
@@ -132,29 +132,29 @@ const StyledNav = styled.nav`
 		height: 100%;
 		width: 100%;
 		opacity: .9;
+        transition: all .9s cubic-bezier(.25, .46, .45, .94);
+        font-family: 'Road Rage';
+        opacity: 0;
+        letter-spacing: 2pt;
 	} &:after {
 		color: #FC1EDF;
-		z-index: -2;
+		z-index: -1;
         top: -1.3rem;
 	} &:before {
         top: 1.3rem;
 		color: #0deefe;
-		z-index: -1;
+		z-index: -2;
 	}
 	&:hover {
 		&:before {
-			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 2
+			animation: glitch .4s cubic-bezier(.25, .46, .45, .94) both 1;    
 		}
 		&:after {
-			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 2
+			animation: glitch .4s cubic-bezier(.25, .46, .45, .94) reverse both 1;
 		}
 	}
   }
-  ul li:last-child{
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: none;
-  }
+
   .icono {
     margin: 0 5vw;
     display: inline;
@@ -165,27 +165,70 @@ const StyledNav = styled.nav`
     opacity: 100%;
   }
   .hidden{
-    transform: translateY(-56%) translateX(43%) scale(0);
+    transform: translateY(-56%) translateX(-45%) scale(0);
     opacity: 0%;
   }
+  .link:hover{
+      opacity: 1;
+      font-family: 'Road Rage';
+      letter-spacing: 3pt;
+  }
+
+/* /////////////////////////////////////////////// */
+/*                    SUBMENU                      */
+/* /////////////////////////////////////////////// */
+  .ListaSub{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    padding: 5vw 3vw;
+    transition: all 0.1s ease-in;
+    opacity: 0;
+  }
+  .ListaSub > li {
+    text-align: left;
+    padding-bottom: 4vw;
+    margin-bottom: 4vw;
+    font-size: 0.8em;   
+  }
+  .subActive {
+      opacity: 1;
+      & > .link:before {
+        animation: glitch .4s cubic-bezier(.25, .46, .45, .94) both 1;
+      } 
+      & > .link:after {
+        animation: glitch .4s cubic-bezier(.25, .46, .45, .94) reverse both 1;
+      } 
+  }
+/* /////////////////////////////////////////////// */
+/*              ANIMACION GLITCH                   */
+/* /////////////////////////////////////////////// */
   @keyframes glitch {
 	0% {
-		transform: translate(0)
+		transform: translate(0);
+        opacity: 0;
 	}
 	20% {
-		transform: translate(-5px, 5px)
+		transform: translate(-10px, 10px);
+        opacity: 1;       
 	}
 	40% {
-		transform: translate(-5px, -5px)
+		transform: translate(-10px, -10px);
+        opacity: 1;
 	}
 	60% {
-		transform: translate(5px, 5px)
+		transform: translate(10px, 10px);
+        opacity: 1;
 	}
 	80% {
-		transform: translate(5px, -5px)
+		transform: translate(10px, -10px);
+        opacity: 1;
 	}
 	to {
-		transform: translate(0)
+		transform: translate(0);
+        opacity: 0;
 	}
 }
 
@@ -279,10 +322,10 @@ const StyledNav = styled.nav`
     display: inline;
     padding: 17px 10px 7px;
   }
-  .link:hover{
+  /* .link:hover{
     background-color: rgba(199, 0, 5, 0.8);
     color: #fff;   
-  }
+  } */
   .navActive{
     color: rgba(199, 0, 5, 0.8);
   }
