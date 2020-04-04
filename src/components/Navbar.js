@@ -5,6 +5,12 @@ const Navbar = () => {
     <StyledNavbar> 
         <div className='linea-azul'>azul</div>
         <div className='linea-morada'>morada</div>
+        <ul classname='nav-links'>
+            <li>PORTFOLIO</li>
+            <li>¿QUIENES SOMOS?</li>
+            <li>CONTACTO</li>
+        </ul>
+
     </StyledNavbar>
     )
 }
