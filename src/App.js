@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
   
-      <GlobalStyle />
+    <GlobalStyle />
     <Navbar />
     <ImagenHome />
      
