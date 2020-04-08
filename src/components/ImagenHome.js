@@ -31,7 +31,7 @@ function ImagenHome() {
     
     
     <PageHeader>
-          <div classname='contenedor' ref={pageHeader}>                                 
+          <div className='contenedor' ref={pageHeader}>                                 
         
                 hola
            

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import StyledNavbar from '../assets/css/StyledNavbar'
-import Logo from '../assets/img/nurien_studio.png'
+import  { StyledNav, Line, Logo, Burger, ListUL, ListLi, MenuLinks, SubMenu, SubMenuItem } from '../assets/css/StyledNavbar'
+import LogoIMG from '../assets/img/nurien_studio.png'
 
 const Navbar = () => {
 
@@ -18,30 +18,30 @@ const Navbar = () => {
     }
 
     return (
-    <StyledNavbar> 
-        <div className='linea-azul'></div>
-        <div className='linea-morada'></div>
-        <div className="burger" onClick={handleMenu}>
+    <StyledNav> 
+        <Line color={'#0deefe40'} top={'20%'}/>
+        <Line color={'#FC1EDF40'} top={'55%'}/>
+        <Burger onClick={handleMenu}>
             <div className={menu ? 'on1' : ''}></div>
             <div className={menu ? 'on2' : ''}></div>
             <div className={menu ? 'on3' : ''}></div>
-        </div>
-        <div className='logo'>
-            <img src={Logo} alt='Logo'/>
-        </div>
-        <ul className={`ListaLink ${menu ? 'active' : 'hidden'}`}>
-            <li>
-                <span className="link" data-glitch="PORTFOLIO" onClick={handleSubMenu}>PORTFOLIO</span>
-                <ul className={`ListaSub ${subMenu ? 'subActive' : ''}`}>
-                    <li className="link" data-glitch="FOTOGRAFIAS"><span>FOTOGRAFIAS</span></li>
-                    <li className="link" data-glitch="VIDEOS">VIDEOS</li>
-                    <li className="link" data-glitch="PORNOGRAGIA">PORNOGRAFIA</li>
-                </ul>
-            </li>
-            <li><span className="link" data-glitch="¿QUIENES SOMOS?">¿QUIENES SOMOS?</span></li>
-            <li><span className="link" data-glitch="CONTACTO">CONTACTO</span></li>
-        </ul>
-    </StyledNavbar>
+        </Burger>
+        <Logo>
+            <img src={LogoIMG} alt='Logo'/>
+        </Logo>
+        <ListUL active={menu}>
+            <ListLi>
+                <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
+                <SubMenu subMenu={subMenu}>
+                    <SubMenuItem><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></SubMenuItem>
+                    <SubMenuItem><MenuLinks Glitch={'VIDEOS'}>VIDEOS</MenuLinks></SubMenuItem>
+                    <SubMenuItem><MenuLinks Glitch={'FOTOMONTAJE'}>FOTOMONTAJE</MenuLinks></SubMenuItem>
+                </SubMenu>
+            </ListLi>
+            <ListLi subMenu={subMenu}><MenuLinks Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'}>¿QUIENES SOMOS?</MenuLinks></ListLi>
+            <ListLi subMenu={subMenu}><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'}>CONTACTO</MenuLinks></ListLi>
+        </ListUL>
+    </StyledNav>
     )
 }
 
