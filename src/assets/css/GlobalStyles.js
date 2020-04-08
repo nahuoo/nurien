@@ -1,4 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
+import LoveloBlack from './fonts/Lovelo Black.otf'
+import Road_Rage from './fonts/Road_Rage.otf'
+import CaviarDreams from './fonts/CaviarDreams.ttf'
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -18,7 +21,20 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+  @font-face {
+    font-family: 'Lovelo Black';
+    src: url('${LoveloBlack}') format('opentype');
+  }
+  @font-face {
+    font-family: 'Road Rage';
+    src: url('${Road_Rage}') format('opentype');
+  }
+  @font-face {
+    font-family: 'Caviar Dreams';
+    src: url('${CaviarDreams}') format('truetype');
+  }
+	
+
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -47,10 +63,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
-    font-family: 'Archivo', sans-serif;
-	font-family: 'Roboto', sans-serif;
-  }
 @media screen and (max-width: 400px) {
 		height:100vh;
 		weight:100vw;
