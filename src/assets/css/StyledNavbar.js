@@ -9,19 +9,19 @@ const glitch = keyframes`
     opacity: 0;
 	}
 	20% {
-		transform: translate(-10px, 10px);
+		transform: translate(-5px, 5px);
     opacity: 1;       
 	}
 	40% {
-		transform: translate(-10px, -10px);
+		transform: translate(-5px, -5px);
     opacity: 1;
 	}
 	60% {
-		transform: translate(10px, 10px);
+		transform: translate(5px, 5px);
     opacity: 1;
 	}
 	80% {
-		transform: translate(10px, -10px);
+		transform: translate(5px, -5px);
     opacity: 1;
 	}
 	to {
@@ -44,6 +44,7 @@ export const StyledNav = styled.nav`
   font-family: 'Lovelo Black', serif;
   font-size: 110%;
   color: white;
+  top:0px;
   @media (min-width: 650px) {
     height: 4vw;
   }
@@ -124,6 +125,7 @@ export const ListUL = styled.ul`
   top: 15vw;
   padding: 5vw 3vw;
   transition: all 0.5s ease-in;
+  user-select:none;
   opacity: ${(props) => props.active ? '100%' : '0%' };
   transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-56%) translateX(-45%) scale(0)'};
 
@@ -173,6 +175,7 @@ export const ListLi = styled.li`
   color: white;
   letter-spacing: 1pt;
   transition: all 0.2s ease 0s;
+  cursor: pointer;
  
 
     &:before, &:after {
@@ -226,6 +229,7 @@ export const SubMenuItem = styled.li`
   text-align: center;
   padding-bottom: 1vw;
   font-size: 0.8rem;
+  user-select:none;
   `
 export const SubMenu = styled.ul`
   display: ${(props) => props.subMenu ? 'flex' : 'none'};

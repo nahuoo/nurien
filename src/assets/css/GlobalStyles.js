@@ -21,6 +21,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
   @font-face {
     font-family: 'Lovelo Black';
     src: url('${LoveloBlack}') format('opentype');

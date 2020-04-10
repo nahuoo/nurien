@@ -1,7 +1,5 @@
 import React from "react";
 
-import PageHeader from '../assets/css/StyleImagenHome';
-
 // core components
 /* const handleClick = () =>
   document.getElementById("name").scrollIntoView({
@@ -9,7 +7,9 @@ import PageHeader from '../assets/css/StyleImagenHome';
     block: "start"
   });
 */
-function ImagenHome() {
+
+function Wrapper
+() {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -29,16 +29,9 @@ function ImagenHome() {
   
   return (
     
+    <div></div>
     
-    <PageHeader>
-          <div className='contenedor' ref={pageHeader}>                                 
-        
-                hola
-           
-          </div>        
-      </PageHeader>   
-      
   );
 }
 
-export default ImagenHome;
+export default Wrapper;
