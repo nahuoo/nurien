@@ -45,6 +45,7 @@ export const StyledNav = styled.nav`
   font-size: 110%;
   color: white;
   top:0px;
+  z-index: 100;
   @media (min-width: 650px) {
     height: 4vw;
   }

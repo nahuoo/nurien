@@ -4,6 +4,7 @@ import GlobalStyle from './assets/css/GlobalStyles'
 import Video from './components/Video'
 import Acordeon from './components/AcordeonBody'
 import Styled from 'styled-components'
+import Portfolio from './components/Portfolio';
 
 const Wrapper = Styled.div`
   display: grid;  
@@ -24,6 +25,7 @@ const App = () => {
       <GlobalStyle />
       <Navbar />
       <Video />
+      <Portfolio />
       <Acordeon titulo='Clientes' titulo2='Contacto'/>
     
     </Wrapper>
