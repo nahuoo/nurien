@@ -6,7 +6,7 @@ const AcordeonNegro = Styled.div`
     height: auto;
     text-align:center;
     color:white;
-    margin:0px;
+    margin:10vh 0;
     @media screen and (min-width: 1000px) {
         width:95vw;
     }
@@ -15,16 +15,17 @@ const Botton = Styled.div`
     margin-top:5px;
     width: 99%;
     color: white;
-    height: ${(props) => props.abierto ? '100vh' : '10vh'};
+    height: ${(props) => props.abierto ? '40vh' : '10vh'};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items:${(props) => props.abierto ? '' : 'center'};
     padding: 1em;
     font-size: 2em;
+    user-select:none;
     font-family: 'Caviar Dreams';
     cursor: pointer;
-    background: black;
+    background: transparent;
     transition: all 0.5s ease-in-out; 
       :hover{
          background: rgba(35, 34, 36,0.6);
@@ -35,7 +36,7 @@ const Botton = Styled.div`
        }
 
     @media screen and (min-width: 1000px) {
-        height: 20vh;
+        height: ${(props) => props.abierto ? '40vh' : '20vh'};
     }
 `
 
@@ -48,16 +49,36 @@ const Clientes = Styled.div`
     background: white;
     transition: all 5s ease;
     overflow: hidden;
+
     
 `
 const Contacto = Styled.div`
     display: ${(props) => props.abierto ? 'block' : 'none'};
-    width:40%;
-    padding: 0 1em;
-    color: black;
-    background: white;
-    transition: all 5s ease;
-    overflow: hidden;
+    width:80%;
+    font-size: 1rem;
+    transition: 2s ease-in;
+    animation: ${(props) => props.abierto ? 'fade' : ''} 2s;
+    @keyframes fade{
+        0% { opacity: 0};
+        100% { opacity: 1};
+    }
+`
+
+const LineaContacto = Styled.div `
+    padding: 10px 0;
+    
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+    align-items: center;
+    border-bottom: 1px solid #FC1EDF;
+    color: #ddd;
+    font-size: 14px;
+    align-items: space-between;
+    transition: border-color .2s;
+        p{
+            margin:1em;
+        }
 `
 
 
@@ -90,8 +111,15 @@ const Acordeon = (props) => {
                 
             <Botton abierto={abierto2}
                 onClick={handleClick2}
-        
-            >{props.titulo2}
+            >
+                {props.titulo2}
+                <Contacto abierto={abierto2}>
+                        <h4>Tomás P. Musacchio Garrot</h4> 
+                        <LineaContacto>
+                            <p>email: tomasmusacchio@nurienstudio.com</p>
+                            <p>teléfono: +54 9 223 449-9953</p>    
+                        </LineaContacto>
+                </Contacto>
             </Botton>
                
         </AcordeonNegro>
