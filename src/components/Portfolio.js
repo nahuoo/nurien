@@ -1,5 +1,5 @@
 import React from 'react'
-import Slides from './SlideComp'
+import Slides from './Carrousel'
 
 
 const Portfolio = () => {
