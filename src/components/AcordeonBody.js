@@ -2,7 +2,7 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const AcordeonNegro = Styled.div`
-    width: 80%;
+    width: 100%;
     height: auto;
     text-align:center;
     color:white;
@@ -13,7 +13,7 @@ const AcordeonNegro = Styled.div`
 `
 const Botton = Styled.div`
     margin-top:5px;
-    width: 96%;
+    width: 99%;
     color: white;
     height: ${(props) => props.abierto ? '100vh' : '10vh'};
     display: flex;
