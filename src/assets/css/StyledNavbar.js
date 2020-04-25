@@ -86,7 +86,7 @@ export const Logo = styled.div`
     left: 37%;
   }
   @media (min-width: 1000px) {
-    height: 130%;
+    height: 8vw;
     left: 3%;
   }
   `
