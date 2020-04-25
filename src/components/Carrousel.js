@@ -2,28 +2,41 @@ import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import { Wrapper, SlideContainer, SlideImg } from '../assets/css/StyledSlide copy'
 
-const Slides = ({images, interval}) => {
+const Slides = ({images, interval, perPages}) => {
   
   const [ activeIndex, setActiveIndex ] = useState(0)
   const [ activeImages, setActiveImages ] = useState([])
+  const [ activePerPage, setActivePerPage ] = useState(0)
 
   useEffect(() => {
+
+    if (perPages === 'mobile'){
+      setActivePerPage(1)
+    }
+    else if (perPages === 'tablet'){
+      setActivePerPage(2)
+    }
+    else {
+      setActivePerPage(4)
+    }
+
+    
     const tick = setInterval(() => {
-      if ( ((activeIndex - 1) * 4) < images.length) {
+      if ( ((activeIndex - 1) * activePerPage) < images.length) {
         setActiveImages([])
         setActiveIndex(activeIndex + 1)
-        setActiveImages(images.slice( (activeIndex - 1)  * 4, ( (activeIndex - 1)  * 4) + 4 ))
+        setActiveImages(images.slice( (activeIndex - 1)  * activePerPage, ( (activeIndex - 1)  * activePerPage) + activePerPage ))
       }
       else {
         setActiveIndex(2)
         setActiveImages([])
-        setActiveImages(images.slice(0, 4))
+        setActiveImages(images.slice(0, activePerPage))
       }
       
     }, interval)
 
     return () => clearInterval(tick)
-  }, [activeIndex, images, interval, activeImages])
+  }, [activeIndex, images, interval, activeImages, activePerPage, perPages])
   
 
   return(
@@ -43,7 +56,7 @@ const Slides = ({images, interval}) => {
 }
 
 Slides.defaultProps = {
-  interval: 2000,
+  interval: 3000,
   images: [
     {
       src: 'https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',

@@ -50,6 +50,7 @@ export const StyledNav = styled.nav`
     height: 4vw;
   }
   @media (min-width: 1000px) {
+    width: 100%;
     height: 0.5vw;
     position: absolute;
     top: 0;
@@ -85,7 +86,7 @@ export const Logo = styled.div`
     left: 37%;
   }
   @media (min-width: 1000px) {
-    height: 130%;
+    height: 8vw;
     left: 3%;
   }
   `
