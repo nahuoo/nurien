@@ -11,14 +11,15 @@ const AcordeonNegro = Styled.div`
         width:95vw;
     }
 `
-const Botton = Styled.a`
-    
+const Botton = Styled.div`
+    margin-top:5px;
     width: 100%;
     color: white;
-    height: 10vh;
+    height: ${(props) => props.abierto ? '100vh' : '10vh'};
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items:${(props) => props.abierto ? '' : 'center'};
     padding: 1em;
     font-size: 2em;
     font-family: 'Caviar Dreams';
@@ -27,6 +28,10 @@ const Botton = Styled.a`
     transition: all 0.5s ease-in-out; 
       :hover{
          background: rgba(35, 34, 36,0.6);
+         
+       
+       
+         top:0;
        }
 
     @media screen and (min-width: 1000px) {
@@ -36,25 +41,25 @@ const Botton = Styled.a`
 
 
 const Clientes = Styled.div`
-    height: ${(props) => props.abierto ? 'auto' : '0'};
-    width:100%;
+    display: ${(props) => props.abierto ? 'block' : 'none'};
+    width:40%;
     padding: 0 1em;
     color: black;
     background: white;
-    transition: all 0.5s ease-in;
+    transition: all 5s ease;
     overflow: hidden;
     
 `
 const Contacto = Styled.div`
-    max-height: ${(props) => props.abierto ? 'auto' : '0'};
-    width:100%;
+    display: ${(props) => props.abierto ? 'block' : 'none'};
+    width:40%;
     padding: 0 1em;
     color: black;
     background: white;
-    transition: all 0.5s ease-in;
+    transition: all 5s ease;
     overflow: hidden;
-    transform: ${(props) => props.abierto ? 'translateY(0%)' : 'translateY(-56%)'};
 `
+
 
 const Acordeon = (props) => {
 
@@ -73,34 +78,22 @@ const Acordeon = (props) => {
     
     return(
         <AcordeonNegro>
+            
+            <Botton abierto={abierto}
+                onClick={handleClick1}
+            >
+                {props.titulo}
+                <Clientes abierto={abierto}>
+                    hola
+                </Clientes >
+            </Botton>
+                
+            <Botton abierto={abierto2}
+                onClick={handleClick2}
         
-        <Botton 
-            onClick={handleClick1}
-        >{props.titulo}
-        </Botton>
-        <Clientes abierto={abierto}>
-            hay si soy re virgo
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-        </Clientes>
-       
-        <Botton 
-            onClick={handleClick2}
-        >{props.titulo2}
-        </Botton>
-        <Contacto abierto={abierto2}>
-
-            hay soy re virgo
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-            <p>asldkaskdj</p>
-
-        </Contacto>
-
-        
+            >{props.titulo2}
+            </Botton>
+               
         </AcordeonNegro>
     )
 }
