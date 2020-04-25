@@ -50,6 +50,7 @@ export const StyledNav = styled.nav`
     height: 4vw;
   }
   @media (min-width: 1000px) {
+    width: 100%;
     height: 0.5vw;
     position: absolute;
     top: 0;
