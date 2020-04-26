@@ -2,13 +2,16 @@ import React from 'react'
 import Styled from 'styled-components'
 
 const AcordeonNegro = Styled.div`
-
-    width: 100%;
+    margin:10vh 0;
+    width: 100vw;
+   
     height: auto;
     text-align:center;
     color:white;
     @media screen and (min-width: 1000px) {
-        width:95vw;
+        width:98vw;
+        left:10px;
+      
     }
 
 `

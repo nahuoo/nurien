@@ -5,6 +5,7 @@ import Video from './components/Video'
 import Acordeon from './components/AcordeonBody'
 import Styled from 'styled-components'
 import Portfolio from './components/Portfolio';
+import Footer from './components/Footer'
 
 const Wrapper = Styled.div`
   display: grid;  
@@ -22,12 +23,12 @@ const Wrapper = Styled.div`
 const App = () => {
   return (
     <Wrapper>
-      <GlobalStyle />
-      <Navbar />
-      <Video />
-      <Portfolio />
-      <Acordeon titulo='Clientes' titulo2='Contacto'/>
-    
+        <GlobalStyle />
+        <Navbar />
+        <Video />
+        <Portfolio />
+        <Acordeon titulo='Clientes' titulo2='Contacto'/>
+        <Footer />
     </Wrapper>
   );
 }

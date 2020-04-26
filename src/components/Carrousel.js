@@ -59,43 +59,43 @@ Slides.defaultProps = {
   interval: 3000,
   images: [
     {
-      src: 'https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'White Red and Blue Flower Petals'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_440/v1587937529/DSC01403_bysa3o.jpg',
+      title: 'Alien'
     },
     {
-      src: 'https://images.pexels.com/photos/2886284/pexels-photo-2886284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'White and Brown House'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587938008/IMG_7545_gf7oyd.jpg',
+      title: 'Rompevientos Nike'
     },
     {
-      src: 'https://images.pexels.com/photos/3617460/pexels-photo-3617460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'Cars on Road Between High Rise Buildings'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937251/miniatura_b679ig.jpg',
+      title: 'Just do it'
     },
     {
-      src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'Aerial Photography of High-rise Buildings at Night'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587939848/cyberpounk_city_bdchsz.jpg',
+      title: 'Cyberpunk'
     },
     {
-      src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'Aerial Photography of High-rise Buildings at Night'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937385/IMG_9419_zndgj2.jpg',
+      title: 'Largada de carrera-Nike'
     },
     {
-      src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'Aerial Photography of High-rise Buildings at Night'
-    },
-    {
-      src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      title: 'Aerial Photography of High-rise Buildings at Night'
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937484/IMG_7902_zoyzoo.jpg',
+      title: 'Modelo de frente'
     },
     {
       src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       title: 'Aerial Photography of High-rise Buildings at Night'
     },
     {
-      src: 'https://images.pexels.com/photos/3583568/pexels-photo-3583568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/v1587937251/miniatura_b679ig.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       title: 'Aerial Photography of High-rise Buildings at Night'
     },
     {
-      src: 'https://images.pexels.com/photos/3617460/pexels-photo-3617460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/v1587937251/miniatura_b679ig.jpg',
+      title: 'Aerial Photography of High-rise Buildings at Night'
+    },
+    {
+      src: 'https://res.cloudinary.com/nurienstudio/image/upload/v1587937838/covid_19_baja_calidad_h4zjur.jpg',
       title: 'Cars on Road Between High Rise Buildings'
     },
   ]
