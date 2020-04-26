@@ -6,21 +6,19 @@ const AcordeonNegro = Styled.div`
     height: auto;
     text-align:center;
     color:white;
-    margin:10vh 0;
     @media screen and (min-width: 1000px) {
         width:95vw;
     }
 `
 const Botton = Styled.div`
-    margin-top:5px;
-    width: 99%;
+    width: 100%;
     color: white;
+    padding: 1em 0;
     height: ${(props) => props.abierto ? '40vh' : '10vh'};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items:${(props) => props.abierto ? '' : 'center'};
-    padding: 1em;
     font-size: 2em;
     user-select:none;
     font-family: 'Caviar Dreams';
@@ -29,10 +27,6 @@ const Botton = Styled.div`
     transition: all 0.5s ease-in-out; 
       :hover{
          background: rgba(35, 34, 36,0.6);
-         
-       
-       
-         top:0;
        }
 
     @media screen and (min-width: 1000px) {
@@ -43,21 +37,25 @@ const Botton = Styled.div`
 
 const Clientes = Styled.div`
     display: ${(props) => props.abierto ? 'block' : 'none'};
-    width:40%;
-    padding: 0 1em;
+    width:30%;
     color: black;
     background: white;
     transition: all 5s ease;
     overflow: hidden;
-
+    @media screen and (min-width: 1000px) {
+        width:40%;
+    }
     
 `
 const Contacto = Styled.div`
     display: ${(props) => props.abierto ? 'block' : 'none'};
-    width:80%;
+    width:90%;
     font-size: 1rem;
     transition: 2s ease-in;
     animation: ${(props) => props.abierto ? 'fade' : ''} 2s;
+    @media screen and (min-width: 1000px) {
+        width:60%;
+    }
     @keyframes fade{
         0% { opacity: 0};
         100% { opacity: 1};
@@ -75,7 +73,6 @@ const LineaContacto = Styled.div `
     color: #ddd;
     font-size: 14px;
     align-items: space-between;
-    transition: border-color .2s;
         p{
             margin:1em;
         }
