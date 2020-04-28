@@ -34,6 +34,7 @@ export const SlideContainer = styled.div`
 `
 export const SlideImg = styled.div`
   width: 250px;
+  height: 400px;
   margin: 0px 20px;
   overflow: hidden;
   border-radius: 3%;
