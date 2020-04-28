@@ -36,7 +36,7 @@ const StyledFooter = styled.footer`
       
   }
   ul li a:hover {
-    color: #b30000;
+    color: #FC1EDF ;
   }
   .copyright {
     font-size: 8px;

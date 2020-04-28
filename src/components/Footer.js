@@ -30,14 +30,14 @@ function Footer() {
             </li>
             <li>
               <i className="fa fa-instagram icon" aria-hidden="true">&nbsp;</i>
-              <a href="https://www.instagram.com/nurien.studio/">
+              <a href="https://www.instagram.com/nurien.studio/" target="_blank" rel="noopener noreferrer">
                 Instagram:&nbsp;/nurienstudio
               </a>
             </li>
             <li>
               <i className="fa fa-youtube icon" aria-hidden="true">&nbsp;</i>
-              <a href="https://www.youtube.com/channel/UC-Pi6Tkx_cUEtK7eft0QEyA">
-                YouTube&nbsp;/nurien
+              <a href="https://www.youtube.com/channel/UC-Pi6Tkx_cUEtK7eft0QEyA"target="_blank" rel="noopener noreferrer">
+                YouTube:&nbsp;/nurien
               </a>
             </li>
           </ul>

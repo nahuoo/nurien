@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
-import { Image, CloudinaryContext, Transformation } from 'cloudinary-react'
+import { Image,Transformation } from 'cloudinary-react'
 import { Wrapper, SlideContainer, SlideImg } from '../assets/css/StyledSlide copy'
 
 const Slides = ({images, interval, perPages}) => {
