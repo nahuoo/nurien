@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 
+
 const AcordeonNegro = Styled.div`
     margin:10vh 0;
     width: 100vw;
@@ -130,12 +131,18 @@ const Acordeon = (props) => {
                 onClick={handleClick2}
             >
                 {props.titulo2}
+                
                 <Contacto abierto={abierto2}>
-                        <h4>Tomás P. Musacchio Garrot</h4> 
+                        
+                        
+                        <h4>-We make your proyect reality-</h4> 
                         <DivContacto>
-                            <p>email: tomasmusacchio@nurienstudio.com</p>
-                            <p>teléfono: +54 9 223 449-9953</p>    
+                            
+                            <p id='nosotros'>Nurien Studio fue fundada en 2018 con el fin de impulsar de forma artistica tu negocio </p>
+                            <p>Desde Mar del Plata prestamos nuestro equipo y conocimiento para generar contenido creativo y original</p>    
                         </DivContacto>
+
+
                 </Contacto>
             </Botton>
                

@@ -27,7 +27,7 @@ const App = () => {
         <Navbar />
         <Video />
         <Portfolio />
-        <Acordeon titulo='Clientes' titulo2='Contacto'/>
+        <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/>
         <Footer />
     </Wrapper>
   );

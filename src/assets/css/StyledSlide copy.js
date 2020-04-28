@@ -12,14 +12,7 @@ const show = keyframes`
     opacity: 1;
   }
 `
-const hide = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% { 
-    opacity: 0;
-  }
-`
+
 export const Wrapper = styled.div`
   height: 60vh;
   color: #FFF;

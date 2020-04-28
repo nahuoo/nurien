@@ -38,7 +38,7 @@ const Navbar = () => {
                     <SubMenuItem><MenuLinks Glitch={'FOTOMONTAJE'}>FOTOMONTAJE</MenuLinks></SubMenuItem>
                 </SubMenu>
             </ListLi>
-            <ListLi subMenu={subMenu}><MenuLinks Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'}>¿QUIENES SOMOS?</MenuLinks></ListLi>
+            <ListLi subMenu={subMenu}><MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'}>¿QUIENES SOMOS?</MenuLinks></ListLi>
             <ListLi subMenu={subMenu}><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'}>CONTACTO</MenuLinks></ListLi>
         </ListUL>
     </StyledNav>

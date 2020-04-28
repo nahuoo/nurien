@@ -3,17 +3,22 @@ import styled from 'styled-components'
 const StyledFooter = styled.footer`
   position: relative;
   display: flex;
-  height: 50vh;
+  height: 100vh;
+  font-family: 'Caviar Dreams';
   border-top: 2px solid #0deefe40;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
   background: transparent;
-  padding: 7.5vh 0;
+  padding: 7vh 0;
   color: #f2f2f2;
+  left:10px;
+ 
 
   ul {
     height: 18vh;
+    
+
   }
   
   ul li{
@@ -36,7 +41,8 @@ const StyledFooter = styled.footer`
   .copyright {
     font-size: 8px;
     position: absolute;
-    bottom: 20%;
+    bottom: 0px;
+    
   }
   .icon {
     display: none;
@@ -67,7 +73,9 @@ const StyledFooter = styled.footer`
 
   @media (min-width: 1000px) {
     padding: 5vh;
-
+    left:0px;
+    flex-direction: row;
+    height: 100vh;
     ul li{
       font-size: 15px;
       letter-spacing: 1.5pt;
