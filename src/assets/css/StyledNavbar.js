@@ -253,7 +253,7 @@ export const SubMenu = styled.ul`
     width: 210px;
     top: 75%;
     left: -56%;
-    box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1);
+    /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
     background: #000000B3;
     transition: all 0.5s ease-in;
     & > ${SubMenuItem} > ${MenuLinks}{

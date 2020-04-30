@@ -8,17 +8,30 @@ const Slides = ({images, interval, perPages}) => {
   const [ activeIndex, setActiveIndex ] = useState(0)
   const [ activeImages, setActiveImages ] = useState([])
   const [ activePerPage, setActivePerPage ] = useState(0)
+  const [ size, setSize ] = useState(window.innerWidth)
+  const [ imgSize, setImageSize ] = useState(0)
+
+  const handleSize = () => {
+    setSize(window.innerWidth)
+  }
 
   useEffect(() => {
 
-    if (perPages === 'mobile'){
-      setActivePerPage(1)
-    }
-    else if (perPages === 'tablet'){
-      setActivePerPage(2)
-    }
-    else {
-      setActivePerPage(4)
+    window.addEventListener('resize', handleSize)
+
+    switch (true){
+      case (size < 630):
+        setActivePerPage(1)
+        setImageSize(500)
+      break
+      case (size < 1000) :
+        setActivePerPage(3)
+        setImageSize(300)
+      break
+      default:
+        setActivePerPage(4)
+        setImageSize(450)
+      break
     }
 
     
@@ -36,12 +49,18 @@ const Slides = ({images, interval, perPages}) => {
       
     }, interval)
 
-    return () => clearInterval(tick)
+    
+
+    return () => {
+      clearInterval(tick)
+      window.removeEventListener('resize', handleSize)
+    }
   }, [activeIndex, images, interval, activeImages, activePerPage, perPages])
   
   const showFullImg = (e) => {
-    console.log(e.target.src)
+    console.log(e.target)
   }
+
 
   return(
     <Wrapper>
@@ -52,7 +71,7 @@ const Slides = ({images, interval, perPages}) => {
             onClick={showFullImg}
           >
           <Image cloudName="nurienstudio" publicId={image.public_id} alt={index}>
-            <Transformation height="450" crop="scale"/>
+            <Transformation height={imgSize} crop="scale"/>
           </Image> 
           </SlideImg>
         ))}

@@ -14,9 +14,19 @@ const show = keyframes`
 `
 
 export const Wrapper = styled.div`
-  height: 60vh;
-  color: #FFF;
-  padding-top: 2vw;
+  height: 70vh;
+  padding: 1vw 0;
+  border-top: 2px solid #0deefe;
+  border-bottom: 2px solid #FC1EDF;
+
+  @media (min-width: 650px) {
+    height: 70vh;
+    padding: 0;
+  }
+  @media (min-width: 1000px) {
+    height: 60vh;
+    padding: 2vw 0;
+  }
 `
 export const SlideContainer = styled.div`
   height: 100%;
@@ -24,14 +34,14 @@ export const SlideContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 `
 export const SlideImg = styled.div`
   width: 250px;
-  height: 400px;
+  height: 90%;
   margin: 0px 20px;
   overflow: hidden;
   border-radius: 3%;
-  text-align: center;
   position: relative;
   animation: ${css`650ms ${show}`};
   img {
@@ -41,5 +51,13 @@ export const SlideImg = styled.div`
     left: -9999px;
     right: -9999px;
     margin: auto;
+  }
+  @media (min-width: 630px) {
+    width: 20%;
+    height: 90%
+  }
+  @media (min-width: 1000px) {
+    width: 250px;
+    height: 400px;
   }
 `
