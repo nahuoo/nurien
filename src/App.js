@@ -21,14 +21,15 @@ const Wrapper = Styled.div`
 `
 
 const App = () => {
+
   return (
-    <Wrapper>
+    <Wrapper> 
         <GlobalStyle />
         <Navbar />
         <Video />
         <Portfolio />
         <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/>
-        <Footer />
+{/*         <Footer /> */}
     </Wrapper>
   );
 }

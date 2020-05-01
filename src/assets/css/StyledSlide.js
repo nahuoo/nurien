@@ -51,6 +51,7 @@ export const SlideImg = styled.div`
     left: -9999px;
     right: -9999px;
     margin: auto;
+    cursor: pointer;
   }
   @media (min-width: 630px) {
     width: 20%;
@@ -58,6 +59,6 @@ export const SlideImg = styled.div`
   }
   @media (min-width: 1000px) {
     width: 250px;
-    height: 400px;
+    height: 95%;
   }
 `

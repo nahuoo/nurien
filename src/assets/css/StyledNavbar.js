@@ -95,6 +95,10 @@ export const Logo = styled.div`
 /* /////////////////////////////////////////////// */
 export const Burger = styled.div`
   margin-left: 3%;
+  position: ${props => props.modal && 'absolute'};
+  top: ${props => props.modal && '3%'};
+  z-index: ${props => props.modal && '115'};
+  cursor: pointer;
   & div{
     width:30px;
     height:5px;
@@ -113,7 +117,7 @@ export const Burger = styled.div`
     transform: translateY(-10px) rotate(-135deg);
   }
   @media (min-width: 1000px) {
-    display: none;
+    display: ${props => props.modal ? "inline" : "none"};
   }`
 /* /////////////////////////////////////////////// */
 /*                    MENU                         */

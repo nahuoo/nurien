@@ -15,7 +15,7 @@ function Footer() {
             <br></br>
             
           <ul>      
-          <li> <a href="tel:+5492234499953"><i class="fa fa-phone"></i> teléfono: +54 9 223 449-9953 </a> </li>              
+          <li> <a href="tel:+5492234499953"><i className="fa fa-phone"></i> teléfono: +54 9 223 449-9953 </a> </li>              
             <li>
               <i className="fa fa-envelope-o icon" aria-hidden="true">&nbsp;</i>
               <a href="mailto:tomasmusacchio@nurienstudio.com" target="_blank" rel="noopener noreferrer">

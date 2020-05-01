@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import propTypes from 'prop-types'
 import { Image,Transformation } from 'cloudinary-react'
-import { Wrapper, SlideContainer, SlideImg } from '../assets/css/StyledSlide copy'
+import { Wrapper, SlideContainer, SlideImg } from '../assets/css/StyledSlide'
 
-const Slides = ({images, interval, perPages}) => {
+const Slides = ({images, interval, selectedPhoto}) => {
   
   const [ activeIndex, setActiveIndex ] = useState(0)
   const [ activeImages, setActiveImages ] = useState([])
@@ -11,14 +11,20 @@ const Slides = ({images, interval, perPages}) => {
   const [ size, setSize ] = useState(window.innerWidth)
   const [ imgSize, setImageSize ] = useState(0)
 
+  // Funcion que detecta los cambios a la ventana para ajustar
   const handleSize = () => {
     setSize(window.innerWidth)
+  }
+  // Onlick de la imagen que extrae el public_id y manda la data al padre
+  const showFullImg = (e) => {
+    selectedPhoto(e.target.src.slice(66), size)
   }
 
   useEffect(() => {
 
     window.addEventListener('resize', handleSize)
 
+    //Switch para ajustar la resolucion de la imagen para el responsive
     switch (true){
       case (size < 630):
         setActivePerPage(1)
@@ -34,7 +40,7 @@ const Slides = ({images, interval, perPages}) => {
       break
     }
 
-    
+    // Carrousel automatico
     const tick = setInterval(() => {
       if ( ((activeIndex - 1) * activePerPage) < images.length) {
         setActiveImages([])
@@ -55,11 +61,8 @@ const Slides = ({images, interval, perPages}) => {
       clearInterval(tick)
       window.removeEventListener('resize', handleSize)
     }
-  }, [activeIndex, images, interval, activeImages, activePerPage, perPages])
+  }, [ size, activeIndex])
   
-  const showFullImg = (e) => {
-    console.log(e.target)
-  }
 
 
   return(
@@ -80,44 +83,5 @@ const Slides = ({images, interval, perPages}) => {
   )
 
 }
-/* 
-Slides.defaultProps = {
-  interval: 3000,
-  images: [
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_440/v1587937529/DSC01403_bysa3o.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587938008/IMG_7545_gf7oyd.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937251/miniatura_b679ig.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587939848/cyberpounk_city_bdchsz.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937385/IMG_9419_zndgj2.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/c_scale,h_400/v1587937484/IMG_7902_zoyzoo.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/v1587937251/miniatura_b679ig.jpg',
-    },
-    {
-      src: 'https://res.cloudinary.com/nurienstudio/image/upload/v1587937838/covid_19_baja_calidad_h4zjur.jpg',
-    },
-  ]
-  
-} */
 
-Slides.propTypes = {
-  interval: propTypes.number,
-  images: propTypes.arrayOf(
-    propTypes.shape({
-      public_id: propTypes.string.isRequired
-    })
-  )
-}
 export default Slides
