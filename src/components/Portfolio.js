@@ -16,7 +16,6 @@ const Portfolio = () => {
   const handleModal = (src) => {
     
     handleLandscape()
-    
     setSelectedPhoto(src)
     setShowModal(!showModal)
 
@@ -51,7 +50,7 @@ const Portfolio = () => {
       {/* aca iria los thumnails con las miniaturas para dar click y cambiar array supongo */}
       { showModal &&
        <ModalImg>
-        <Wrapper>
+        <Wrapper onClick={handleModal}>
           <Burger modal={showModal} onClick={handleModal}>
             <div className="on1"></div>
             <div className="on2"></div>

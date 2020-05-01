@@ -33,7 +33,7 @@ export const SlideContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `
 export const SlideImg = styled.div`
