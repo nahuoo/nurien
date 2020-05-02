@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import GlobalStyle from './assets/css/GlobalStyles'
 import Styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
@@ -25,14 +25,13 @@ const App = () => {
 
   const [ showIntro, setShowIntro ] = useState(true)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowIntro(false)
-    }, 7000)
-  })
+  const handleIntro = () => {
+    setShowIntro(false)
+  }
 
   return (
     <Wrapper> 
+        { showIntro && <Intro End={handleIntro}/>}
         <GlobalStyle />
         { showIntro && <Intro />}
         <Navbar />

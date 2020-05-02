@@ -36,7 +36,7 @@ const Formulario = () => {
  
 
   return(
-    <StyledFormulario>
+    <StyledFormulario id='contacto'>
      
     <form onSubmit={handleSubmit}>
 

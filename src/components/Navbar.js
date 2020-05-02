@@ -12,6 +12,16 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false)
     const [subMenu, setSubMenu] = useState(false)
 
+    const handleClick = (e) => {
+        e.preventDefault()
+        document.getElementById('nosotros').scrollIntoView({behavior: 'smooth' })
+    }
+
+    const handleClick2 = (e) => {
+        e.preventDefault()
+        document.getElementById('contacto').scrollIntoView({behavior: 'smooth' })
+    }
+
     const handleMenu = () => {
         if(subMenu){
             setSubMenu(!subMenu)
@@ -40,12 +50,26 @@ const Navbar = () => {
                 <ListLi>
                     <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
                     <SubMenu subMenu={subMenu}>
-                        <SubMenuItem><MenuLinks Glitch={'FOTOGRAFIAS'}><Link className="link" to="/fotografias">FOTOGRAFIAS</Link></MenuLinks></SubMenuItem>
+                        <SubMenuItem>
+                            <MenuLinks Glitch={'FOTOGRAFIAS'}>
+                                <Link className="link" to="/fotografias">
+                                    FOTOGRAFIAS
+                                </Link>
+                            </MenuLinks>
+                        </SubMenuItem>
                         <SubMenuItem><MenuLinks Glitch={'VIDEOS'}><Link className="link" to="/videos">VIDEOS</Link></MenuLinks></SubMenuItem>
                     </SubMenu>
                 </ListLi>
-                <ListLi subMenu={subMenu}><MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'}>¿QUIENES SOMOS?</MenuLinks></ListLi>
-                <ListLi subMenu={subMenu}><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'}>CONTACTO</MenuLinks></ListLi>
+                <ListLi subMenu={subMenu}>
+                    <MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'} onClick={handleClick} >
+                            ¿QUIENES SOMOS?     
+                    </MenuLinks>
+                </ListLi>
+                <ListLi subMenu={subMenu}>
+                    <MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'} onClick={handleClick2} >
+                        CONTACTO
+                    </MenuLinks>
+                </ListLi>
             </ListUL>
     </StyledNav>
     )

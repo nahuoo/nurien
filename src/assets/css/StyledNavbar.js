@@ -250,7 +250,7 @@ export const SubMenu = styled.ul`
   transition: all 0.1s ease-in;
   .link{
     text-decoration: none;
-     
+    z-index:3000;
     color:white;
   }
   & > ${SubMenuItem} > ${MenuLinks}::before{

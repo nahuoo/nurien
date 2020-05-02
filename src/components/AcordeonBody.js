@@ -116,7 +116,7 @@ const Acordeon = (props) => {
     }
     
     return(
-        <AcordeonNegro>
+        <AcordeonNegro id='nosotros'>
             
             <Botton abierto={abierto}
                 onClick={handleClick1}
@@ -138,7 +138,7 @@ const Acordeon = (props) => {
                         <h4>-We make your proyect reality-</h4> 
                         <DivContacto>
                             
-                            <p id='nosotros'>Nurien Studio fue fundada en 2018 con el fin de impulsar de forma artistica tu negocio </p>
+                            <p>Nurien Studio fue fundada en 2018 con el fin de impulsar de forma artistica tu negocio </p>
                             <p>Desde Mar del Plata prestamos nuestro equipo y conocimiento para generar contenido creativo y original</p>    
                         </DivContacto>
 
