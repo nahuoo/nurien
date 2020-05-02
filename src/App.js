@@ -1,11 +1,12 @@
-import React from 'react';
-import Styled from 'styled-components'
+import React, {useState, useEffect} from 'react';
 import GlobalStyle from './assets/css/GlobalStyles'
+import Styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import SeccionVideos from './pages/SeccionVideos'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Intro from './components/Intro'
 
 const Wrapper = Styled.div`
   display: grid;  
@@ -22,10 +23,19 @@ const Wrapper = Styled.div`
 
 const App = () => {
 
+  const [ showIntro, setShowIntro ] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowIntro(false)
+    }, 7000)
+  })
+
   return (
     <Wrapper> 
-        <Navbar />
         <GlobalStyle />
+        { showIntro && <Intro />}
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/videos" exact component={SeccionVideos} />
