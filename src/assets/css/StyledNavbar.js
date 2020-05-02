@@ -186,7 +186,7 @@ export const ListLi = styled.li`
   
     &:before, &:after {
 	    display: block;
-	    content: '${(props) => props.Glitch}';
+	    
 	    text-transform: uppercase;
 	    position: relative;
 	    height: 100%;
