@@ -25,15 +25,13 @@ const App = () => {
 
   const [ showIntro, setShowIntro ] = useState(true)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowIntro(false)
-    }, 7000)
-  })
+  const handleIntro = () => {
+    setShowIntro(false)
+  }
 
   return (
     <Wrapper> 
-        { showIntro && <Intro />}
+        { showIntro && <Intro End={handleIntro}/>}
         <GlobalStyle />
         <Navbar />
         <Video />
