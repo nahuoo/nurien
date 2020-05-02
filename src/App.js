@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar'
 import GlobalStyle from './assets/css/GlobalStyles'
 import Video from './components/Video'
@@ -6,6 +6,7 @@ import Acordeon from './components/AcordeonBody'
 import Styled from 'styled-components'
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer'
+import Intro from './components/Intro'
 
 const Wrapper = Styled.div`
   display: grid;  
@@ -22,14 +23,23 @@ const Wrapper = Styled.div`
 
 const App = () => {
 
+  const [ showIntro, setShowIntro ] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowIntro(false)
+    }, 7000)
+  })
+
   return (
     <Wrapper> 
+        { showIntro && <Intro />}
         <GlobalStyle />
         <Navbar />
         <Video />
         <Portfolio />
         <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/>
-        <Footer /> 
+        <Footer />
     </Wrapper>
   );
 }
