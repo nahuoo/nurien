@@ -29,7 +29,7 @@ const App = () => {
         <Video />
         <Portfolio />
         <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/>
-{/*         <Footer /> */}
+        <Footer /> 
     </Wrapper>
   );
 }

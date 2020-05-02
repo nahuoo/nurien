@@ -42,6 +42,7 @@ function Footer() {
             </li>
           </ul>
         </div>
+        <div></div>
         <div className="copyright">
           {new Date().getFullYear()}, Nurien Studio  ♡  Mar del Plata.
         </div>

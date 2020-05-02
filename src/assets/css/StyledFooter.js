@@ -2,26 +2,28 @@ import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
   position: relative;
-  display: flex;
-  height: 100vh;
+  display: grid;
+  height: 110vh;
   font-family: 'Caviar Dreams';
   border-top: 2px solid #0deefe40;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
+  grid-gap: 30px;
+  justify-content: center;
+  align-content: space-around;
   background: transparent;
   padding: 7vh 0;
   color: #f2f2f2;
-  left:10px;
+  
  
 
   ul {
+    
     height: 18vh;
     
 
   }
   
   ul li{
+    
     padding: 0 0 0.5rem;
     margin:0 0 0.5rem;
     font-weight: bold;
@@ -39,13 +41,13 @@ const StyledFooter = styled.footer`
     color: #FC1EDF ;
   }
   .copyright {
-    font-size: 8px;
-    position: absolute;
-    bottom: 0px;
     
-  }
+    font-size: 8px;
+    text-align:center;
+    
+      }
   .icon {
-    display: none;
+    
   }
   .direction {
     line-height: 1.5; 
@@ -53,7 +55,7 @@ const StyledFooter = styled.footer`
 
   @media (min-width: 650px) {
     padding: 10vh;
-
+    height: 200vh;
     ul{
       padding: 5px
     }
@@ -75,7 +77,7 @@ const StyledFooter = styled.footer`
     padding: 5vh;
     left:0px;
     flex-direction: row;
-    height: 100vh;
+    height: 150vh;
     ul li{
       font-size: 15px;
       letter-spacing: 1.5pt;

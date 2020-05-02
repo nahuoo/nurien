@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const StyledFormulario = styled.div ` 
-   top:0px;
+position:relative;
 form{
    display:flex;
    flex-direction: column;
@@ -13,7 +13,7 @@ form{
 }
 
  input,textarea,select{ 
-    position:relative;
+    position:block;
     background: transparent;
     border:none;
     border-bottom: 1px solid #FC1EDF;
@@ -80,9 +80,7 @@ form{
    margin-bottom: 30px;
  }
 
- .left{
-   justify-content:left;
-}
+
 
  /* mobil */
  @media screen and (max-width: 500px){
@@ -108,8 +106,14 @@ form{
  }
  
   /* tablet */
-  @media screen and (max-height: 500px){
-   height: 200vh;
+  @media screen and (min-height: 1000px){
+   
+
+   input:focus, textarea:focus{
+    border-radius: 0.50rem 0.50rem 0 0; 
+    padding:10px;
+ }
+   
   }
  `
   export default StyledFormulario
