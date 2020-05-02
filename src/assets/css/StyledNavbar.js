@@ -174,16 +174,16 @@ export const ListLi = styled.li`
   }
   `
  export const MenuLinks = styled.p`
+  
   padding-top: 0;
   margin-top: 0;
-  text-decoration: none;
   font-size: 1.2rem;
   color: white;
   letter-spacing: 1pt;
   transition: all 0.2s ease 0s;
   cursor: pointer;
- 
-
+  
+  
     &:before, &:after {
 	    display: block;
 	    content: '${(props) => props.Glitch}';
@@ -216,7 +216,8 @@ export const ListLi = styled.li`
 	    }
 	    &:after {
 		    animation: ${glitch} .4s cubic-bezier(.25, .46, .45, .94) reverse both 1;
-	    }
+      
+      }
     }
   @media (min-width: 650px) {
     display: ${props => props.subMenu ? 'none' : 'initial'};
@@ -228,10 +229,13 @@ export const ListLi = styled.li`
     display: initial;
   }
   `
+
+  
 /* /////////////////////////////////////////////// */
 /*                    SUBMENU                      */
 /* /////////////////////////////////////////////// */
 export const SubMenuItem = styled.li`
+ 
   text-align: center;
   padding-bottom: 1vw;
   font-size: 0.8rem;
@@ -244,6 +248,11 @@ export const SubMenu = styled.ul`
   left: 0;
   top: 0;
   transition: all 0.1s ease-in;
+  .link{
+    text-decoration: none;
+     
+    color:white;
+  }
   & > ${SubMenuItem} > ${MenuLinks}::before{
     animation: ${props => props.subMenu ? css`${glitch} .4s cubic-bezier(.25, .46, .45, .94) both 1` : ''};
   }

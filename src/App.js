@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar'
-import GlobalStyle from './assets/css/GlobalStyles'
-import Video from './components/Video'
-import Acordeon from './components/AcordeonBody'
 import Styled from 'styled-components'
-import Portfolio from './components/Portfolio';
+import GlobalStyle from './assets/css/GlobalStyles'
+import { Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import SeccionVideos from './pages/SeccionVideos'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 const Wrapper = Styled.div`
@@ -24,11 +24,12 @@ const App = () => {
 
   return (
     <Wrapper> 
-        <GlobalStyle />
         <Navbar />
-        <Video />
-        <Portfolio />
-        <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/>
+        <GlobalStyle />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/videos" exact component={SeccionVideos} />
+        </Switch>
         <Footer /> 
     </Wrapper>
   );
