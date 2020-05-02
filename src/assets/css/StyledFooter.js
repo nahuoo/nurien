@@ -78,6 +78,7 @@ const StyledFooter = styled.footer`
   @media (min-width: 1000px) {
     padding: 5vh;
     padding-top:10%;
+    margin-left:10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     left:0px;
