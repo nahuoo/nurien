@@ -10,19 +10,19 @@ const Formulario = () => {
   const [visible, setVisible] = React.useState(false)
   
 
-  const handleClick = () => {
-    setVisible(!visible)
+  const Mostrar = () => {
+    console.log(visible)
     setTimeout(() => {
       setVisible(!visible)
     }, 3000);
-    console.log(visible)
+
   }
 
 
  const handleSubmit = (event) => { 
   
   event.preventDefault()
-  let Mensaje = `nombre=${event.target[0].value}&localidad=${event.target[1].value}&tipo=${event.target[2].value}&pacientes=${event.target[3].value}&email=${event.target[4].value}&mensaje=${event.target[5].value}`
+  let Mensaje = `nombre=${event.target[0].value}&localidad=${event.target[1].value}&email=${event.target[2].value}&mensaje=${event.target[3].value}`
   
   fetch('http://192.168.0.1asd', {
    method: 'post',
@@ -30,8 +30,8 @@ const Formulario = () => {
    body: Mensaje
   })
   .then(response => response.text())
-  .then(data => console.log(data));
-  
+  .then(data => console.log(data))
+  .then(Mostrar());
   }
  
 
@@ -82,7 +82,7 @@ const Formulario = () => {
       className='submit' 
       type='submit' 
       value='Enviar'
-      onClick={() => handleClick() }
+      onClick={(e) => e.preventDefault() }
       />
     </form>
     <Snackbar visible={visible}> Mensaje enviado! </Snackbar>

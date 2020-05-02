@@ -13,7 +13,9 @@ const StyledFooter = styled.footer`
   padding: 7vh 0;
   color: #f2f2f2;
   
- 
+ .contacto{
+   padding-top:30px;
+ }
 
   ul {
     
@@ -75,18 +77,23 @@ const StyledFooter = styled.footer`
 
   @media (min-width: 1000px) {
     padding: 5vh;
+    padding-top:10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     left:0px;
     flex-direction: row;
-    height: 150vh;
+    height: 90vh;
     ul li{
       font-size: 15px;
       letter-spacing: 1.5pt;
       margin-bottom: 1em;
     }
     .copyright {
+      position:absolute;
       font-size: 12px;
       bottom: 5%;
       letter-spacing: 1.5pt;
+      left:40%
     }
 
   }

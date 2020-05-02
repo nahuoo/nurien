@@ -9,7 +9,7 @@ function Footer() {
         <div>
             <Formulario />
         </div>
-        <div>
+        <div className='contacto'>
             <h4>Tomás P. Musacchio Garrot</h4> 
             <br></br>
             <br></br>

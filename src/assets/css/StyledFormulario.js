@@ -9,6 +9,7 @@ form{
    flex-direction: column;
    justify-content: center ;
    align-items: center;
+
    
 }
 
@@ -32,7 +33,9 @@ form{
          outline: none;
          
       }
-    
+      ::placeholder{
+   color: #fff;
+   }
 
 
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
