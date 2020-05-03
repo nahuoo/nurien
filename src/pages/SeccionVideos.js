@@ -35,10 +35,11 @@ const Imagenes = Styled.div `
        }
     }
 
-    @media screen and (max-height: 480px) {
+    @media screen and (max-height: 600px) {
         display:flex;
         flex-direction: column;
         img {
+            width:90%;
             margin: 10px;
 
         }
