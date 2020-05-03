@@ -45,8 +45,9 @@ function Footer() {
         <div></div>
         <div className="copyright">
           {new Date().getFullYear()}, Nurien Studio  ♡  Mar del Plata.
+          
         </div>
-        
+        <p>Meticulosamente constituido por AnotherTeam</p>
       </StyledFooter>
   );
 }

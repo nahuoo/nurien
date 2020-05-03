@@ -1,6 +1,11 @@
 import React from 'react'
 import Styled from 'styled-components'
-
+import blanca from '../assets/img/blanca.png'
+import hd from '../assets/img/hd.png'
+import identity from '../assets/img/identity.png'
+import marcos from '../assets/img/marcos.png'
+import meta from '../assets/img/meta.png'
+import negativo from '../assets/img/negativo.png'
 
 const AcordeonNegro = Styled.div`
     margin:10vh 0;
@@ -52,13 +57,13 @@ const Botton = Styled.div`
 const Clientes = Styled.div`
 
     display: ${(props) => props.abierto ? 'block' : 'none'};
-    width:30%;
+    width:100%;
     color: black;
-    background: white;
+    background: ${blanca};
     transition: all 5s ease;
     overflow: hidden;
     @media screen and (min-width: 1000px) {
-        width:40%;
+        width:100%;
     }
     
 `
@@ -128,7 +133,14 @@ const Acordeon = (props) => {
             >
                 {props.titulo}
                 <Clientes abierto={abierto}>
-                    hola
+
+                    <div src={blanca} alt="Marca" ></div>
+                    <img src={hd} alt="hd" ></img>
+                    <div src={identity} alt="identity" ></div>
+                    <div src={marcos} alt="marcos" ></div>
+                    <div src={meta} alt="meta" ></div>
+                    <div src={negativo} alt="negativo" ></div>
+
                 </Clientes >
             </Botton>
                 

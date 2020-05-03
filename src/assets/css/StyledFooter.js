@@ -13,6 +13,13 @@ const StyledFooter = styled.footer`
   padding: 7vh 0;
   color: #f2f2f2;
   
+  p{
+    font-size: 8px;
+    position:absolute;
+    bottom: 2%;
+    letter-spacing: 1.5pt;
+    left:15%
+  }
  .contacto{
    padding-top:30px;
  }
@@ -43,7 +50,7 @@ const StyledFooter = styled.footer`
     color: #FC1EDF ;
   }
   .copyright {
-    
+    bottom:5%;
     font-size: 8px;
     text-align:center;
     
@@ -94,9 +101,16 @@ const StyledFooter = styled.footer`
       font-size: 12px;
       bottom: 5%;
       letter-spacing: 1.5pt;
-      left:30%
+      left:35%
     }
-
+    p{
+    font-size: 12px;
+    position:absolute;
+    font-size: 12px;
+    bottom: 1%;
+    letter-spacing: 1.5pt;
+    left:32%
+  }
   }
  
 `

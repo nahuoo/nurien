@@ -238,7 +238,7 @@ export const ListLi = styled.li`
 /*                    SUBMENU                      */
 /* /////////////////////////////////////////////// */
 export const SubMenuItem = styled.li`
- 
+  
   text-align: center;
   padding-bottom: 1vw;
   left: 20;
@@ -254,11 +254,11 @@ export const SubMenuItem = styled.li`
 export const SubMenu = styled.ul`
   transition: all 0.1s ease-in;
   display: ${(props) => props.subMenu ? 'flex' : 'none'};
+  top: ${(props) => props.subMenu ? '0' : '-200}'};
   flex-direction: column;
   position: relative;
   left: 0;
-  top: 0;
-  
+  overflow-y: hidden;
   .link{
     text-decoration: none;
     
@@ -276,10 +276,11 @@ export const SubMenu = styled.ul`
   @media (min-width: 1000px) {
     display:${(props) => props.subMenu ? 'grid' : 'none'};
     margin:0;
-    height: 15vh;
+    height: 20vh;
     width: 210px;
     flex-direction: row;
-    padding:0;
+    align-items: space-around;
+    padding-top:35px;
     top: 30%;
     left: -50%;
     box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); 
