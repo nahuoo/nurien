@@ -123,6 +123,7 @@ export const Burger = styled.div`
 /*                    MENU                         */
 /* /////////////////////////////////////////////// */
 export const ListUL = styled.ul`
+  
   display: flex;
   position: fixed;
   flex-direction: column;
@@ -134,6 +135,9 @@ export const ListUL = styled.ul`
   user-select:none;
   opacity: ${(props) => props.active ? '100%' : '0%' };
   transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-56%) translateX(-45%) scale(0)'};
+  
+  
+  
 
   @media (min-width: 650px) {
     top: 10vw;
@@ -186,7 +190,7 @@ export const ListLi = styled.li`
   
     &:before, &:after {
 	    display: block;
-	   /* content: '${(props) => props.Glitch}'; */ 
+	    content: '${(props) => props.Glitch}'; 
 	    text-transform: uppercase;
 	    position: relative;
 	    height: 100%;
@@ -238,6 +242,8 @@ export const SubMenuItem = styled.li`
  
   text-align: center;
   padding-bottom: 1vw;
+  left: 20;
+  position: relative;
   font-size: 0.8rem;
   user-select:none;
   `
@@ -250,7 +256,7 @@ export const SubMenu = styled.ul`
   transition: all 0.1s ease-in;
   .link{
     text-decoration: none;
-    z-index:3000;
+    
     color:white;
   }
   & > ${SubMenuItem} > ${MenuLinks}::before{
@@ -264,7 +270,9 @@ export const SubMenu = styled.ul`
   }
   @media (min-width: 1000px) {
     width: 210px;
-    top: 75%;
+    flex-direction: row;
+    padding:0;
+    top: 200%;
     left: -56%;
     /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
     background: #000000B3;

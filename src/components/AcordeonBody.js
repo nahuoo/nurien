@@ -64,14 +64,19 @@ const Clientes = Styled.div`
 `
 const Contacto = Styled.div`
     
+    margin-top: 10%;
     display: ${(props) => props.abierto ? '' : 'none'};
     width:90%;
+    padding-left: 20px;
+
     font-size: 1rem;
     transition: 2s ease-in;
     animation: ${(props) => props.abierto ? 'fade' : ''} 2s;
     @media screen and (min-width: 1000px) {
         width:100%;
         padding-top:10vh;
+        margin-top: 0px;
+        padding-left:0px;
     }
     @keyframes fade{
         0% { opacity: 0};

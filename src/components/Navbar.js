@@ -50,14 +50,20 @@ const Navbar = () => {
                 <ListLi>
                     <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
                     <SubMenu subMenu={subMenu}>
-                        <SubMenuItem>
-                            <MenuLinks Glitch={'FOTOGRAFIAS'}>
-                                <Link className="link" to="/fotografias">
+                        <Link className="link" to="/fotografias">
+                            <SubMenuItem>
+                                <MenuLinks Glitch={'FOTOGRAFIAS'}>
                                     FOTOGRAFIAS
-                                </Link>
-                            </MenuLinks>
-                        </SubMenuItem>
-                        <SubMenuItem><MenuLinks Glitch={'VIDEOS'}><Link className="link" to="/videos">VIDEOS</Link></MenuLinks></SubMenuItem>
+                                </MenuLinks>  
+                            </SubMenuItem>
+                        </Link>
+                        <Link className="link" to="/videos">
+                            <SubMenuItem>
+                                <MenuLinks Glitch={'VIDEOS'}>
+                                    VIDEOS
+                                </MenuLinks>
+                            </SubMenuItem>
+                        </Link>
                     </SubMenu>
                 </ListLi>
                 <ListLi subMenu={subMenu}>
