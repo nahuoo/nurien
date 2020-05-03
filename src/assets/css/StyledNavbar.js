@@ -245,7 +245,12 @@ export const SubMenuItem = styled.li`
   position: relative;
   font-size: 0.8rem;
   user-select:none;
+  @media (min-width: 1000px) {
+    left:30px;
+    position: absolute;
+  }
   `
+/* el div negro del submenu */
 export const SubMenu = styled.ul`
   transition: all 0.1s ease-in;
   display: ${(props) => props.subMenu ? 'flex' : 'none'};
@@ -269,13 +274,16 @@ export const SubMenu = styled.ul`
     padding-bottom: 0;
   }
   @media (min-width: 1000px) {
+    display:${(props) => props.subMenu ? 'grid' : 'none'};
+    margin:0;
+    height: 15vh;
     width: 210px;
     flex-direction: row;
     padding:0;
-    top: 200%;
-    left: -56%;
-    /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
-    background: #000000B3;
+    top: 30%;
+    left: -50%;
+    box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); 
+    background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(1,1,4,0) 40%, rgba(0,0,0,1) 100%);
     transition: all 0.5s ease-in;
     & > ${SubMenuItem} > ${MenuLinks}{
       position: initial;
