@@ -21,7 +21,7 @@ const StyledVideo = styled.div`
 `
 const Video = (props) => {
     return(
-        <StyledVideo>
+        <StyledVideo id="video">
             <iframe 
                 width="100%" 
                 height="100%" 

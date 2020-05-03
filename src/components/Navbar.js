@@ -12,12 +12,12 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false)
     const [subMenu, setSubMenu] = useState(false)
 
-    const handleClick = (e) => {
+    const handleNosotros = (e) => {
         e.preventDefault()
         document.getElementById('nosotros').scrollIntoView({behavior: 'smooth' })
     }
 
-    const handleClick2 = (e) => {
+    const handleContactos = (e) => {
         e.preventDefault()
         document.getElementById('contacto').scrollIntoView({behavior: 'smooth' })
     }
@@ -61,12 +61,12 @@ const Navbar = () => {
                     </SubMenu>
                 </ListLi>
                 <ListLi subMenu={subMenu}>
-                    <MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'} onClick={handleClick} >
+                    <MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'} onClick={handleNosotros} >
                             ¿QUIENES SOMOS?     
                     </MenuLinks>
                 </ListLi>
                 <ListLi subMenu={subMenu}>
-                    <MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'} onClick={handleClick2} >
+                    <MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'} onClick={handleContactos} >
                         CONTACTO
                     </MenuLinks>
                 </ListLi>

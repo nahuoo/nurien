@@ -31,9 +31,8 @@ const App = () => {
 
   return (
     <Wrapper> 
-        { showIntro && <Intro End={handleIntro}/>}
+       {/* { showIntro && <Intro End={handleIntro}/>} */}
         <GlobalStyle />
-        { showIntro && <Intro />}
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />

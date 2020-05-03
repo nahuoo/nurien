@@ -94,7 +94,7 @@ const StyledFooter = styled.footer`
       font-size: 12px;
       bottom: 5%;
       letter-spacing: 1.5pt;
-      left:40%
+      left:30%
     }
 
   }
