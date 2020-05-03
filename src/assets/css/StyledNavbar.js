@@ -105,7 +105,7 @@ export const Burger = styled.div`
     background-color: white;
     margin:5px;
     border-radius: 20%;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     }
   & .on1{
     transform: translateY(10px) rotate(135deg);
@@ -131,11 +131,10 @@ export const ListUL = styled.ul`
   background: #000000B3;
   top: 15vw;
   padding: 5vw 3vw;
-  transition: all 0.5s ease-in;
+  transition: all .2s ease-in;
   user-select:none;
   opacity: ${(props) => props.active ? '100%' : '0%' };
-  transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-56%) translateX(-45%) scale(0)'};
-  
+  transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-5%) translateX(0%) scale(1)'};
   
   
 
@@ -248,12 +247,13 @@ export const SubMenuItem = styled.li`
   user-select:none;
   `
 export const SubMenu = styled.ul`
+  transition: all 0.1s ease-in;
   display: ${(props) => props.subMenu ? 'flex' : 'none'};
   flex-direction: column;
   position: relative;
   left: 0;
   top: 0;
-  transition: all 0.1s ease-in;
+  
   .link{
     text-decoration: none;
     

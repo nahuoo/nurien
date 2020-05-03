@@ -15,11 +15,13 @@ const Navbar = () => {
     const handleNosotros = (e) => {
         e.preventDefault()
         document.getElementById('nosotros').scrollIntoView({behavior: 'smooth' })
+        setMenu(!menu)
     }
 
     const handleContactos = (e) => {
         e.preventDefault()
         document.getElementById('contacto').scrollIntoView({behavior: 'smooth' })
+        setMenu(!menu)
     }
 
     const handleMenu = () => {
@@ -48,16 +50,16 @@ const Navbar = () => {
             </Logo>
             <ListUL active={menu}>
                 <ListLi>
-                    <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
-                    <SubMenu subMenu={subMenu}>
-                        <Link className="link" to="/fotografias">
+                    <MenuLinks Glitch={'PORTFOLIO'} onMouseEnter={handleSubMenu}  onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
+                    <SubMenu subMenu={subMenu} onMouseLeave={handleSubMenu}>
+                        <Link className="link" to="/fotografias" onClick={handleMenu} >
                             <SubMenuItem>
                                 <MenuLinks Glitch={'FOTOGRAFIAS'}>
                                     FOTOGRAFIAS
                                 </MenuLinks>  
                             </SubMenuItem>
                         </Link>
-                        <Link className="link" to="/videos">
+                        <Link className="link" to="/videos" onClick={handleMenu}>
                             <SubMenuItem>
                                 <MenuLinks Glitch={'VIDEOS'}>
                                     VIDEOS
