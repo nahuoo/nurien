@@ -56,14 +56,18 @@ const Botton = Styled.div`
 
 const Clientes = Styled.div`
 
-    display: ${(props) => props.abierto ? 'block' : 'none'};
+    display: ${(props) => props.abierto ? 'grid' : 'none'};
+    grid-template-columns: 1fr;
     width:100%;
+    height:auto;
     color: black;
-    background: ${blanca};
+   
     transition: all 5s ease;
     overflow: hidden;
     @media screen and (min-width: 1000px) {
-        width:100%;
+        height:200vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        height:auto;
     }
     
 `
@@ -134,12 +138,12 @@ const Acordeon = (props) => {
                 {props.titulo}
                 <Clientes abierto={abierto}>
 
-                    <div src={blanca} alt="Marca" ></div>
-                    <img src={hd} alt="hd" ></img>
-                    <div src={identity} alt="identity" ></div>
-                    <div src={marcos} alt="marcos" ></div>
-                    <div src={meta} alt="meta" ></div>
-                    <div src={negativo} alt="negativo" ></div>
+                    <img src={blanca} height='100px' alt="Marca" ></img>
+                    <img src={hd} height='100px' alt="hd" ></img>
+                    <img src={identity} height='100px' alt="identity" ></img>
+                    <img src={marcos} height='200px' alt="marcos" ></img>
+                    <img src={meta} height='100px' alt="meta" ></img>
+                    <img src={negativo} height='100px' alt="negativo" ></img>
 
                 </Clientes >
             </Botton>
