@@ -26,7 +26,7 @@ const Botton = Styled.div`
     width: 100%;
     color: white;
     padding: 1em 0;
-    height: ${(props) => props.abierto ? '40vh' : '10vh'};
+    height: ${(props) => props.abierto ? '50vh' : '10vh'};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,17 +55,36 @@ const Botton = Styled.div`
 
 
 const Clientes = Styled.div`
-
-    display: ${(props) => props.abierto ? 'grid' : 'none'};
-    grid-template-columns: 1fr;
+    
+    display: ${(props) => props.abierto ? 'flex' : 'none'};
+    flex-wrap: wrap;
+    flex: 10%;
     width:100%;
-    height:auto;
+    height:200vh;
     color: black;
-   
+    justify-content:space-around;
+
+   .display{
+       display:none;
+   }
+   img{
+       margin: 10px;
+   }
+
     transition: all 5s ease;
-    overflow: hidden;
     @media screen and (min-width: 1000px) {
+        .display{
+       display:block;
+   }
+        img{
+       margin: 20px;
+   }
+        display: ${(props) => props.abierto ? 'flex' : 'none'};
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         height:200vh;
+        margin-top:20px;
         grid-template-columns: 1fr 1fr 1fr 1fr ;
         height:auto;
     }
@@ -138,12 +157,12 @@ const Acordeon = (props) => {
                 {props.titulo}
                 <Clientes abierto={abierto}>
 
-                    <img src={blanca} height='100px' alt="Marca" ></img>
+                    <img src={blanca} height='50px' alt="Marca" ></img>
                     <img src={hd} height='100px' alt="hd" ></img>
                     <img src={identity} height='100px' alt="identity" ></img>
                     <img src={marcos} height='200px' alt="marcos" ></img>
-                    <img src={meta} height='100px' alt="meta" ></img>
-                    <img src={negativo} height='100px' alt="negativo" ></img>
+                    <img className='display' src={meta} height='100px' alt="meta" ></img>
+                    <img className='display' src={negativo} height='70px' alt="negativo" ></img>
 
                 </Clientes >
             </Botton>
