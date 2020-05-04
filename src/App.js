@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import GlobalStyle from './assets/css/GlobalStyles'
 import Styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
@@ -7,6 +7,7 @@ import SeccionVideos from './pages/SeccionVideos'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Intro from './components/Intro'
+import Acordeon from './components/AcordeonBody'
 
 const Wrapper = Styled.div`
   display: grid;  
@@ -25,20 +26,27 @@ const App = () => {
 
   const [ showIntro, setShowIntro ] = useState(true)
 
+  const AcordeonRef = useRef(null)
+
   const handleIntro = () => {
     setShowIntro(false)
+  }
+
+  const handleNosotrosFromNav = () => {
+    AcordeonRef.current.click()
   }
 
   return (
     <Wrapper> 
        {/* { showIntro && <Intro End={handleIntro}/>} */}
         <GlobalStyle />
-        <Navbar />
+        <Navbar acordeon={handleNosotrosFromNav}/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/videos" exact component={SeccionVideos} />
         </Switch>
-        <Footer /> 
+        <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?' ref={AcordeonRef}/>
+        <Footer id="contacto"/> 
     </Wrapper>
   );
 }
