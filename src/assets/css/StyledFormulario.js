@@ -111,7 +111,6 @@ form{
   /* tablet */
   @media screen and (min-height: 1000px){
    
-
    input:focus, textarea:focus{
     border-radius: 0.50rem 0.50rem 0 0; 
     padding:10px;
