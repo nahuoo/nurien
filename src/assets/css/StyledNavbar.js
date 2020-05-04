@@ -105,7 +105,7 @@ export const Burger = styled.div`
     background-color: white;
     margin:5px;
     border-radius: 20%;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     }
   & .on1{
     transform: translateY(10px) rotate(135deg);
@@ -123,7 +123,6 @@ export const Burger = styled.div`
 /*                    MENU                         */
 /* /////////////////////////////////////////////// */
 export const ListUL = styled.ul`
-  
   display: flex;
   position: fixed;
   flex-direction: column;
@@ -131,12 +130,10 @@ export const ListUL = styled.ul`
   background: #000000B3;
   top: 15vw;
   padding: 5vw 3vw;
-  transition: all .2s ease-in;
+  transition: all 0.5s ease-in;
   user-select:none;
   opacity: ${(props) => props.active ? '100%' : '0%' };
-  transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-5%) translateX(0%) scale(1)'};
-  
-  
+  transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-56%) translateX(-45%) scale(0)'};
 
   @media (min-width: 650px) {
     top: 10vw;
@@ -177,19 +174,19 @@ export const ListLi = styled.li`
   }
   `
  export const MenuLinks = styled.p`
-  
   padding-top: 0;
   margin-top: 0;
+  text-decoration: none;
   font-size: 1.2rem;
   color: white;
   letter-spacing: 1pt;
   transition: all 0.2s ease 0s;
   cursor: pointer;
-  
-  
+ 
+
     &:before, &:after {
 	    display: block;
-	    content: '${(props) => props.Glitch}'; 
+	    content: '${(props) => props.Glitch}';
 	    text-transform: uppercase;
 	    position: relative;
 	    height: 100%;
@@ -219,8 +216,7 @@ export const ListLi = styled.li`
 	    }
 	    &:after {
 		    animation: ${glitch} .4s cubic-bezier(.25, .46, .45, .94) reverse both 1;
-      
-      }
+	    }
     }
   @media (min-width: 650px) {
     display: ${props => props.subMenu ? 'none' : 'initial'};
@@ -232,68 +228,47 @@ export const ListLi = styled.li`
     display: initial;
   }
   `
-
-  
 /* /////////////////////////////////////////////// */
 /*                    SUBMENU                      */
 /* /////////////////////////////////////////////// */
 export const SubMenuItem = styled.li`
-  
   text-align: center;
-  padding-bottom: 1vw;
-  left: 20;
-  position: relative;
-  font-size: 0.8rem;
+  padding: 1vw 0;
+  font-size: 0.9rem;
   user-select:none;
-  @media (min-width: 1000px) {
-    left:30px;
-    position: absolute;
-  }
+  text-decoration: none;
   `
-/* el div negro del submenu */
 export const SubMenu = styled.ul`
-  transition: all 0.1s ease-in;
   display: ${(props) => props.subMenu ? 'flex' : 'none'};
-  top: ${(props) => props.subMenu ? '0' : '-200}'};
   flex-direction: column;
   position: relative;
   left: 0;
-  overflow-y: hidden;
-  .link{
-    text-decoration: none;
-    
-    color:white;
-  }
-  & > ${SubMenuItem} > ${MenuLinks}::before{
+  top: 0;
+  transition: all 0.1s ease-in;
+  & > ${SubMenuItem} > a > ${MenuLinks}::before{
     animation: ${props => props.subMenu ? css`${glitch} .4s cubic-bezier(.25, .46, .45, .94) both 1` : ''};
   }
-  & > ${SubMenuItem} > ${MenuLinks}::after{
+  & > ${SubMenuItem} > a > ${MenuLinks}::after{
     animation: ${props => props.subMenu ? css`${glitch} .4s cubic-bezier(.25, .46, .45, .94) reverse both 1` : ''};
   }
   @media (min-width: 650px) {
     padding-bottom: 0;
   }
   @media (min-width: 1000px) {
-    display:${(props) => props.subMenu ? 'grid' : 'none'};
-    margin:0;
-    height: 20vh;
     width: 210px;
-    flex-direction: row;
-    align-items: space-around;
-    padding-top:35px;
-    top: 30%;
-    left: -50%;
-    box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); 
-    background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(1,1,4,0) 40%, rgba(0,0,0,1) 100%);
+    top: 75%;
+    left: -56%;
+    /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
+    background: #000000B3;
     transition: all 0.5s ease-in;
-    & > ${SubMenuItem} > ${MenuLinks}{
+    & > ${SubMenuItem} > a > ${MenuLinks}{
       position: initial;
       font-size: 0.9rem;
     }
-    & > ${SubMenuItem} > ${MenuLinks}::after{
+    & > ${SubMenuItem} > a > ${MenuLinks}::after{
       z-index:initial;
     }
-    & > ${SubMenuItem} > ${MenuLinks}::before{
+    & > ${SubMenuItem} > a > ${MenuLinks}::before{
       z-index:initial;
     }
   }

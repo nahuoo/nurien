@@ -1,7 +1,6 @@
 import React from 'react'
 import Video from '../components/Video'
 import Styled from 'styled-components'
-import Acordeon from '../components/AcordeonBody'
 import NurienLean from '../assets/img/NurienLean.jpg'                      
 import Nurienags from '../assets/img/Nurienags.jpg'
 import Nurienbasket from '../assets/img/Nurienbasket.jpg'
@@ -143,7 +142,6 @@ const SeccionVideos = () => {
             </div>
 
             </Imagenes>
-        <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?'/> 
         </VideosDiv>
 
     )

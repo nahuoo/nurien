@@ -114,7 +114,7 @@ const DivContacto = Styled.div `
 `
 
 
-const Acordeon = (props) => {
+const Acordeon = React.forwardRef((props, ref) => {
 
     const [abierto,setAbierto] = React.useState(false)
     const [abierto2,setAbierto2] = React.useState(false)
@@ -150,6 +150,7 @@ const Acordeon = (props) => {
                 
             <Botton abierto={abierto2}
                 onClick={handleClick2}
+                ref={ref}
             >
                 {props.titulo2}
                 
@@ -169,6 +170,6 @@ const Acordeon = (props) => {
                
         </AcordeonNegro>
     )
-}
+})
 
 export default Acordeon

@@ -1,14 +1,8 @@
 import React, {useState} from 'react'
 import  { StyledNav, Line, Logo, Burger, ListUL, ListLi, MenuLinks, SubMenu, SubMenuItem } from '../assets/css/StyledNavbar'
 import LogoIMG from '../assets/img/nurien_studio.png'
-import {Link} from 'react-router-dom'
-import ScrollIntoView from 'react-scroll-into-view'
 
-const LinkStyle = {
-textDecoration: 'none' 
-}
-
-const Navbar = (props) => {
+const Navbar = () => {
 
     const [menu, setMenu] = useState(false)
     const [subMenu, setSubMenu] = useState(false)
@@ -23,16 +17,6 @@ const Navbar = (props) => {
         setSubMenu(!subMenu)
     }
 
-    const handleBothMenus = () => {
-        handleMenu()
-        handleSubMenu()
-    }
-
-    const handleAcordeon = () => {
-        props.acordeon()
-    }
-
-
     return (
     <StyledNav> 
         <Line color={'#0deefe60'} top={'20%'}/>
@@ -42,21 +26,20 @@ const Navbar = (props) => {
             <div className={menu ? 'on2' : ''}></div>
             <div className={menu ? 'on3' : ''}></div>
         </Burger>
-        <Link to="/">
         <Logo>
             <img src={LogoIMG} alt='Logo'/>
         </Logo>
-        </Link>
         <ListUL active={menu}>
             <ListLi>
                 <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
                 <SubMenu subMenu={subMenu}>
-                    <SubMenuItem onClick={handleBothMenus}><Link to="/fotografias" style={LinkStyle}><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></Link></SubMenuItem>
-                    <SubMenuItem onClick={handleBothMenus}><Link to="/videos" style={LinkStyle}><MenuLinks Glitch={'VIDEOS'}>VIDEOS</MenuLinks></Link></SubMenuItem>
+                    <SubMenuItem><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></SubMenuItem>
+                    <SubMenuItem><MenuLinks Glitch={'VIDEOS'}>VIDEOS</MenuLinks></SubMenuItem>
+                    <SubMenuItem><MenuLinks Glitch={'FOTOMONTAJE'}>FOTOMONTAJE</MenuLinks></SubMenuItem>
                 </SubMenu>
             </ListLi>
-            <ListLi subMenu={subMenu}><ScrollIntoView selector="#nosotros" onClick={handleAcordeon}><MenuLinks Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'} onClick={handleMenu}>¿QUIENES SOMOS?</MenuLinks></ScrollIntoView></ListLi>
-            <ListLi subMenu={subMenu}><ScrollIntoView selector="#contacto"><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'} onClick={handleMenu}>CONTACTO</MenuLinks></ScrollIntoView></ListLi>
+            <ListLi subMenu={subMenu}><MenuLinks  Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'}>¿QUIENES SOMOS?</MenuLinks></ListLi>
+            <ListLi subMenu={subMenu}><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'}>CONTACTO</MenuLinks></ListLi>
         </ListUL>
     </StyledNav>
     )
