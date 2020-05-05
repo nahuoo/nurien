@@ -51,11 +51,13 @@ export const Clientes = styled.div`
     
     display: ${(props) => props.abierto ? 'flex' : 'none'};
     flex-wrap: wrap;
-    flex: 10%;
-    width:100%;
+    flex-direction:column;
+    width:25%;
+    margin-left: 25vw;
     height:200vh;
     color: black;
-    justify-content:space-around;
+    justify-content:center;
+    align-items: center;
 
    .display{
        display:none;

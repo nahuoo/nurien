@@ -32,7 +32,7 @@ const Acordeon = React.forwardRef((props, ref) => {
                     <img src={blanca} height='50px' alt="Marca" ></img>
                     <img src={hd} height='100px' alt="hd" ></img>
                     <img src={identity} height='100px' alt="identity" ></img>
-                    <img src={marcos} height='200px' alt="marcos" ></img>
+                    <img className='display' src={marcos} height='200px' alt="marcos" ></img>
                     <img className='display' src={meta} height='100px' alt="meta" ></img>
                     <img className='display' src={negativo} height='70px' alt="negativo" ></img>
                 </Clientes >
