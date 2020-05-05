@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import propTypes from 'prop-types'
 import { Image,Transformation } from 'cloudinary-react'
 import { Wrapper, SlideContainer, SlideImg } from '../assets/css/StyledSlide'
+import Loader from '../assets/css/loader'
 
 const Slides = ({images, interval, selectedPhoto}) => {
   
@@ -10,6 +10,7 @@ const Slides = ({images, interval, selectedPhoto}) => {
   const [ activePerPage, setActivePerPage ] = useState(0)
   const [ size, setSize ] = useState(window.innerWidth)
   const [ imgSize, setImageSize ] = useState(0)
+  const [ isFetching, setIsFetching ] = useState(true)
 
   // Funcion que detecta los cambios a la ventana para ajustar
   const handleSize = () => {
@@ -19,6 +20,10 @@ const Slides = ({images, interval, selectedPhoto}) => {
   const showFullImg = (e) => {
     selectedPhoto(e.target.src.slice(66), size)
   }
+
+const handleFetch = () => {
+  setIsFetching(false)
+}
 
   useEffect(() => {
 
@@ -43,8 +48,8 @@ const Slides = ({images, interval, selectedPhoto}) => {
     // Carrousel automatico
     const tick = setInterval(() => {
       if ( ((activeIndex - 1) * activePerPage) < images.length) {
-        setActiveImages([])
         setActiveIndex(activeIndex + 1)
+        setActiveImages([])
         setActiveImages(images.slice( (activeIndex - 1)  * activePerPage, ( (activeIndex - 1)  * activePerPage) + activePerPage ))
       }
       else {
@@ -68,7 +73,14 @@ const Slides = ({images, interval, selectedPhoto}) => {
   return(
     <Wrapper>
       <SlideContainer>
-        {activeImages.map((image, index) => (
+        {isFetching && <Loader />}
+        {activeImages.map((image, index) => {
+          if (isFetching){
+          handleFetch()
+          }
+          /* setIsFetching(false)  */
+        
+          return(
           <SlideImg
             key={index}
             onClick={showFullImg}
@@ -77,7 +89,7 @@ const Slides = ({images, interval, selectedPhoto}) => {
             <Transformation height={imgSize} crop="scale"/>
           </Image> 
           </SlideImg>
-        ))}
+        )})}
       </SlideContainer>
     </Wrapper>
   )
