@@ -66,7 +66,7 @@ const handleFetch = () => {
       clearInterval(tick)
       window.removeEventListener('resize', handleSize)
     }
-  }, [ size, activeIndex])
+  }, [interval, size, activeIndex, activePerPage, images] )
   
 
 

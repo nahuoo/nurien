@@ -51,7 +51,7 @@ const Navbar = (props) => {
             <ListLi>
                 <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
                 <SubMenu subMenu={subMenu}>
-                    <SubMenuItem onClick={handleBothMenus}><Link to="/fotografias" style={LinkStyle}><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></Link></SubMenuItem>
+                    <SubMenuItem onClick={handleBothMenus}><Link to="/fotos" style={LinkStyle}><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></Link></SubMenuItem>
                     <SubMenuItem onClick={handleBothMenus}><Link to="/videos" style={LinkStyle}><MenuLinks Glitch={'VIDEOS'}>VIDEOS</MenuLinks></Link></SubMenuItem>
                 </SubMenu>
             </ListLi>

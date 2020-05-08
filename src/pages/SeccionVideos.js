@@ -53,7 +53,7 @@ const Imagenes = Styled.div `
     
 `
 
-export const Slogan = Styled.p`
+export const Slogan = Styled.h2`
     user-select:none;
     margin-top:10vh;
     width: 100%;

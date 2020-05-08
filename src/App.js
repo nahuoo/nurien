@@ -3,6 +3,7 @@ import GlobalStyle from './assets/css/GlobalStyles'
 import Styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import SeccionFotografias from './pages/SeccionFotografias'
 import SeccionVideos from './pages/SeccionVideos'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -43,6 +44,7 @@ const App = () => {
         <Navbar acordeon={handleNosotrosFromNav}/>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/fotos" exact component={SeccionFotografias} />
           <Route path="/videos" exact component={SeccionVideos} />
         </Switch>
         <Acordeon titulo='Clientes' titulo2='¿Quiénes somos?' ref={AcordeonRef}/>
