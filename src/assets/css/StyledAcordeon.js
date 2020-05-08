@@ -67,13 +67,15 @@ export const Clientes = styled.div`
    }
 
     transition: all 5s ease;
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 425px) {
         .display{
        display:block;
    }
         img{
-       margin: 20px;
-   }
+          margin: 20px;
+        }     
+        margin-left: 0;
+        width:100%;
         display: ${(props) => props.abierto ? 'flex' : 'none'};
         flex-direction: row;
         justify-content: center;
