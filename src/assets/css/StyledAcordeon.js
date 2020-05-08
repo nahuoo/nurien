@@ -67,7 +67,7 @@ export const Clientes = styled.div`
    }
 
     transition: all 5s ease;
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 425px) {
         .display{
        display:block;
    }
