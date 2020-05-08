@@ -72,8 +72,10 @@ export const Clientes = styled.div`
        display:block;
    }
         img{
-       margin: 20px;
-   }
+          margin: 20px;
+        }     
+        margin-left: 0;
+        width:100%;
         display: ${(props) => props.abierto ? 'flex' : 'none'};
         flex-direction: row;
         justify-content: center;
