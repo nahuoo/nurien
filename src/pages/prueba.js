@@ -14,10 +14,11 @@ const Virgo = Styled.div`
 `
 
 const Virgo2 = Styled.div`
-    clip-path: inset(0 90% 0 0%);
+    position: absolute;
+    top:0;
     transition: 2s ease-in;
     clip-path: ${(props) => props.animation ? 'inset(0 0% 0 100% )' : 'inset(0 0% 0 0%)'} ;
-    z-index: ${(props) => props.index ? -1 : -0};
+    z-index: ${(props) => props.index ? 2 : 2};
     
 `
 const Virgo3 = Styled.div`
@@ -25,7 +26,6 @@ const Virgo3 = Styled.div`
     top:0;
     transition: 2s ease-in;
     clip-path: ${(props) => props.animation ? 'inset(0 0% 0 0% )' : 'inset(0 100% 0 0%)'};
-
     
 `
 const Hola = () => {
@@ -42,7 +42,7 @@ const Hola = () => {
         <Virgo>
             <Virgo2 animation={animation} index={index}  >
              <Image cloudName="nurienstudio" publicId='vete' alt="FullScreen">
-              <Transformation height='100px'  />
+              <Transformation height='550' width="1000" crop="fill" />
               </Image>
             </Virgo2>
              <button onClick={handleClick} >boton</button>
