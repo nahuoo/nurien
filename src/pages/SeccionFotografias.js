@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
 import { GalleryWrapper, Titulo } from '../assets/css/StyledFotografias'
+import Hola from './prueba'
 
 const SeccionFotografias = () => {
 
@@ -15,11 +16,9 @@ const SeccionFotografias = () => {
         })
     })
 
- 
-
-  
     return (
         <section>
+            <Hola />
            <Titulo>
                 Fotografías
             </Titulo>
