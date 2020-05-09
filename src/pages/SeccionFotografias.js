@@ -20,7 +20,7 @@ const SeccionFotografias = () => {
   
     return (
         <section>
-           <Titulo ref={imagenes}>
+           <Titulo>
                 Fotografías
             </Titulo>
             <GalleryWrapper >
