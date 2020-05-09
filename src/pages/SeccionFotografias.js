@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
-import { GalleryWrapper } from '../assets/css/StyledFotografias'
+import { GalleryWrapper, Titulo } from '../assets/css/StyledFotografias'
 
 const SeccionFotografias = () => {
 
@@ -15,20 +15,40 @@ const SeccionFotografias = () => {
         })
     })
 
+    let imagenes = React.createRef();
+
+  React.useEffect(() => {
+    if (window.innerWidth > 991) {
+      const updateScroll = () => {
+        let windowScrollTop = window.pageYOffset / 0.5;
+        imagenes.current.style.transform =
+          "translate3d(0," + windowScrollTop + "px,0)";
+      };
+      window.addEventListener("scroll", updateScroll);
+      return function cleanup() {
+        window.removeEventListener("scroll", updateScroll);
+      };
+    }
+  });
     return (
         <section>
-            <Slogan>
-                -We make your proyect reality-
-            </Slogan>
-            <GalleryWrapper>
+           <Titulo ref={imagenes}>
+                Fotografías
+            </Titulo>
+            <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
-                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index}>
+                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
                             <Transformation height="500" crop="scale"/>
                         </Image> 
                     </div>
                 ))}
             </GalleryWrapper>
+            <Slogan >
+                -We make your proyect reality-
+            </Slogan>
+
+            
         </section>
     )
 }
