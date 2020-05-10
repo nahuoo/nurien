@@ -15,7 +15,33 @@ const SeccionFotografias = () => {
             setGallery(data.resources)
         })
     })
+    if (window.innerHeight < 8000) {
+         return(
+            <section>
+            <Slogan>
+                -Portfolio-
+            </Slogan>
+            <CarrouselFotos />
+            <Slogan>
+                -Fotografías-
+            </Slogan>
+            <GalleryWrapper >
+                {gallery.map((image, index)=> (
+                    <div key={index}>
+                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
+                            <Transformation height="150" crop="limit"/>
+                        </Image> 
+                    </div>
+                ))}
+            </GalleryWrapper>
+            <Slogan>
+                -We make your proyect reality-
+            </Slogan>
 
+            
+        </section>
+         ) 
+     } else {
     return (
         <section>
             <Slogan>
@@ -40,7 +66,7 @@ const SeccionFotografias = () => {
 
             
         </section>
-    )
+    )}
 }
 
 export default SeccionFotografias

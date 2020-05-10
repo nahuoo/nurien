@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const AcordeonNegro = styled.div`
     margin:10vh 0;
     width: 100vw;
-   
+    border-bottom: 2px solid #0deefe40;
+   padding-bottom: 15vh;
     height: auto;
     text-align:center;
     color:white;

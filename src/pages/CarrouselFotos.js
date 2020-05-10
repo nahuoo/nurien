@@ -9,28 +9,46 @@ const DivNegro = Styled.div`
     background: black;
     color:white;
     height: 15vh;
+
+    @media (min-width: 650px) {
+        
+    }
     
 `
 const Boton = Styled.button`
     position: absolute;
+    user-select:none;
     font-family: 'Caviar Dreams';
-    top: 80vh;
-    width: 10%;
-    font-size: 1em;
-    border: grey;
-    background: grey;
+    top: 50vh;
+    left: 2%;
     color:white;
-    height: 15vh;
+    background: transparent;
+    font-size: 1.5em;
+    border: 3px solid #055f65;
+    border-top: 8px solid #640c59;
+    border-bottom: 8px solid #055f65 ;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    transition: .2s linear;
+    :hover{
+        border: 8px solid #055f65;
+        border-top: 3px solid #055f65;
+        border-bottom: 8px solid #640c59;
+    }
+    :active{
+        border: 15px solid #640c59;
+        border-top: 3px solid #640c59;
+        border-bottom: 8px solid #640c59;
+    }
+    @media (max-width: 650px) {
+        top: 5vh;
+    }
     
 `
 
 const Virgo = Styled.div`
     height: 80vh;
-    button{
-        position:absolute;
-        top: 20%;
-        left: 0%;
-    }
     display:flex;
     align-content: center;
     justify-content: center;
@@ -95,7 +113,27 @@ const Hola = () => {
         
     }  
 
-    return(
+    if (window.innerHeight < 8000) { 
+        return(
+            isFetching ? <h2>cargando...</h2> : 
+            <Virgo>
+                <DivNegro />
+                <Virgo2 animation={animation} >
+                <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
+                <Transformation height='450' width="300" crop="fill" />
+                </Image>
+                </Virgo2>
+                <Boton onClick={handleClick} >Próxima foto</Boton>
+                <Virgo3 animation={animation} >
+                <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
+                <Transformation height='450' width="300" crop="fit" />
+                </Image>
+                </Virgo3>
+             </Virgo>
+        ) } 
+    else {
+
+    return (
         isFetching ? <h2>cargando...</h2> : 
             <Virgo>
                 <DivNegro />
@@ -111,7 +149,7 @@ const Hola = () => {
                 </Image>
                 </Virgo3>
              </Virgo>
-    )
+    )}
 }
 
 export default Hola
