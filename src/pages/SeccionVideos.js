@@ -84,7 +84,7 @@ const ruta9 = "https://www.youtube.com/embed/Qb-Ah5QfMi4"
 
 const SeccionVideos = () => {
 
-    const [cambioVideo,setCambioVideo] = React.useState(ruta2)
+    const [cambioVideo,setCambioVideo] = React.useState(ruta9)
     
     const handleClick = (e) => {
         document.getElementById("video").scrollIntoView({behavior: 'smooth' })
