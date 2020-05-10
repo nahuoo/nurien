@@ -34,19 +34,31 @@ const Hola = () => {
 
  const [animation,setAnimation] = React.useState('')
  const [index,setIndex] = React.useState('vete')
+ const [gallery,setGallery] = React.useState([])
+
+ React.useEffect( () => {
+  
+    fetch('https://res.cloudinary.com/nurienstudio/image/list/nurien.json')
+    .then(res => res.json())
+    .then(data => {
+        setGallery(data.resources)
+      })}, [] )
+
  const handleClick = ()  => { 
      setAnimation(!animation) 
      if (index === 'vete') {
         setTimeout(() => {
             setIndex('DSC01009_hqhb3l') 
-          }, 2000); 
-    }}
+          }, 2000); }
+    }
+        
+    
   
 
     return(
         <Virgo>
             <Virgo2 animation={animation} >
-             <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
+             <Image cloudName="nurienstudio" publicId={gallery.public_id} alt="FullScreen">
               <Transformation height='550' width="1000" crop="fill" />
               </Image>
             </Virgo2>
