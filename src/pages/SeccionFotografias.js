@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
-import { GalleryWrapper, Titulo } from '../assets/css/StyledFotografias'
-import Hola from './prueba'
+import { GalleryWrapper } from '../assets/css/StyledFotografias'
+import CarrouselFotos from './CarrouselFotos'
 
 const SeccionFotografias = () => {
 
@@ -18,10 +18,13 @@ const SeccionFotografias = () => {
 
     return (
         <section>
-            <Hola />
-           <Titulo>
-                Fotografías
-            </Titulo>
+            <Slogan>
+                -Portfolio-
+            </Slogan>
+            <CarrouselFotos />
+            <Slogan>
+                -Fotografías-
+            </Slogan>
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
@@ -31,7 +34,7 @@ const SeccionFotografias = () => {
                     </div>
                 ))}
             </GalleryWrapper>
-            <Slogan >
+            <Slogan>
                 -We make your proyect reality-
             </Slogan>
 
