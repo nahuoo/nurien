@@ -42,7 +42,9 @@ const Boton = Styled.button`
         border-bottom: 8px solid #640c59;
     }
     @media (max-width: 650px) {
-        top: 5vh;
+        top: 8vh;
+        font-size: 1em;
+        height: 90px;
     }
     
 `
@@ -113,7 +115,7 @@ const Hola = () => {
         
     }  
 
-    if (window.innerHeight < 8000) { 
+    if (window.innerWidth < 650) { 
         return(
             isFetching ? <h2>cargando...</h2> : 
             <Virgo>
@@ -126,7 +128,7 @@ const Hola = () => {
                 <Boton onClick={handleClick} >Próxima foto</Boton>
                 <Virgo3 animation={animation} >
                 <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                <Transformation height='450' width="300" crop="fit" />
+                <Transformation height='450' width="300" crop="fill" />
                 </Image>
                 </Virgo3>
              </Virgo>

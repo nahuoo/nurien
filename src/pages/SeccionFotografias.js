@@ -15,7 +15,7 @@ const SeccionFotografias = () => {
             setGallery(data.resources)
         })
     })
-    if (window.innerHeight < 8000) {
+    if (window.innerWidth < 650) {
          return(
             <section>
             <Slogan>
@@ -55,7 +55,7 @@ const SeccionFotografias = () => {
                 {gallery.map((image, index)=> (
                     <div key={index}>
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
-                            <Transformation height="500" crop="scale"/>
+                            <Transformation height="300" crop="scale"/>
                         </Image> 
                     </div>
                 ))}
