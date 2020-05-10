@@ -39,7 +39,7 @@ const Virgo = Styled.div`
 
 const Virgo2 = Styled.div`
     position:absolute;
-    top: 23%;
+    top: 25%;
     transition: 1s ease-out;
     clip-path: ${(props) => props.animation ? 'inset(0 0% 0 100% )' : 'inset(0 0% 0 0%)'};
  
@@ -47,7 +47,7 @@ const Virgo2 = Styled.div`
 `
 const Virgo3 = Styled.div`
     position: absolute;
-    top: 23%;
+    top: 25%;
     align-content:center;
     transition: 1s ease-out;
     clip-path: ${(props) => props.animation ? 'inset(0 0% 0 0% )' : 'inset(0 100% 0 0%)'};
