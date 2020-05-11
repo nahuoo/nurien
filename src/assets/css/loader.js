@@ -6,11 +6,13 @@ const spin = keyframes`
 `
 const Loader = styled.div`
 
-  border: 10px solid #0deefe;
-  border-top: 11px solid #FC1EDF;
+  border: 5px solid #0deefe;
+  border-top: 8px solid #FC1EDF;
+  border-bottom: 7px solid #0deefe ;
   border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  animation: ${spin} 2s linear infinite;
+  width: 45px;
+  height: 45px;
+  animation: ${spin} 1s ease-out infinite;
+
 `
 export default Loader 

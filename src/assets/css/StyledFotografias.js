@@ -14,9 +14,12 @@ export const GalleryWrapper = styled.div`
     }
     `
 export const Titulo = styled.div`
-    background:black;
-    
+position:absolute;
+top: 15vh;
+height: 10vh;
+color:white;
 `
+
 export const Division = styled.div`
     position:fixed;
     background:transparent;

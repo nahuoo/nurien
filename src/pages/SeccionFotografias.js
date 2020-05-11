@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
-import { GalleryWrapper, Titulo } from '../assets/css/StyledFotografias'
-import Hola from './prueba'
+import { GalleryWrapper } from '../assets/css/StyledFotografias'
+import CarrouselFotos from './CarrouselFotos'
 
 const SeccionFotografias = () => {
 
@@ -15,29 +15,58 @@ const SeccionFotografias = () => {
             setGallery(data.resources)
         })
     })
-
-    return (
-        <section>
-            <Hola />
-           <Titulo>
-                Fotografías
-            </Titulo>
-{/*             <GalleryWrapper >
+    if (window.innerWidth < 650) {
+         return(
+            <section>
+            <Slogan>
+                -Portfolio-
+            </Slogan>
+            <CarrouselFotos />
+            <Slogan>
+                -Fotografías-
+            </Slogan>
+            <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
-                            <Transformation height="500" crop="scale"/>
+                            <Transformation height="150" crop="limit"/>
                         </Image> 
                     </div>
                 ))}
             </GalleryWrapper>
-            <Slogan >
+            <Slogan>
+                -We make your proyect reality-
+            </Slogan>
+
+            
+        </section>
+         ) 
+     } else {
+    return (
+        <section>
+            <Slogan>
+                -Portfolio-
+            </Slogan>
+            <CarrouselFotos />
+            <Slogan>
+                -Fotografías-
+            </Slogan>
+            <GalleryWrapper >
+                {gallery.map((image, index)=> (
+                    <div key={index}>
+                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
+                            <Transformation height="300" crop="scale"/>
+                        </Image> 
+                    </div>
+                ))}
+            </GalleryWrapper>
+            <Slogan>
                 -We make your proyect reality-
             </Slogan>
  */}
             
         </section>
-    )
+    )}
 }
 
 export default SeccionFotografias

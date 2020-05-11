@@ -58,7 +58,7 @@ export const Slogan = Styled.h2`
     margin-top:10vh;
     width: 100%;
     color: white;
-    padding: 1em 0;
+    padding: .5em 0;
     height: ${(props) => props.abierto ? '40vh' : '10vh'};
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@ const ruta9 = "https://www.youtube.com/embed/Qb-Ah5QfMi4"
 
 const SeccionVideos = () => {
 
-    const [cambioVideo,setCambioVideo] = React.useState(ruta2)
+    const [cambioVideo,setCambioVideo] = React.useState(ruta9)
     
     const handleClick = (e) => {
         document.getElementById("video").scrollIntoView({behavior: 'smooth' })

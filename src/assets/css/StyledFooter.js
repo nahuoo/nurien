@@ -5,7 +5,6 @@ const StyledFooter = styled.footer`
   display: grid;
   height: 110vh;
   font-family: 'Caviar Dreams';
-  border-top: 2px solid #0deefe40;
   grid-gap: 30px;
   justify-content: center;
   align-content: space-around;
