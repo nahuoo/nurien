@@ -22,7 +22,7 @@ const SeccionFotografias = () => {
            <Titulo>
                 Fotografías
             </Titulo>
-            <GalleryWrapper >
+{/*             <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
@@ -34,7 +34,7 @@ const SeccionFotografias = () => {
             <Slogan >
                 -We make your proyect reality-
             </Slogan>
-
+ */}
             
         </section>
     )
