@@ -58,7 +58,7 @@ export const SlideImg = styled.div`
     height: 90%
   }
   @media (min-width: 1000px) {
-    width: 250px;
+    width: 18%;
     height: 95%;
   }
 `

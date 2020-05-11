@@ -41,7 +41,12 @@ const handleFetch = () => {
       break
       default:
         setActivePerPage(4)
-        setImageSize(450)
+        if (size > 1500){
+          setImageSize(600)
+        }
+        else{
+          setImageSize(450)
+        }
       break
     }
 

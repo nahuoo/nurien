@@ -63,7 +63,7 @@ const SeccionFotografias = () => {
             <Slogan>
                 -We make your proyect reality-
             </Slogan>
-
+ */}
             
         </section>
     )}
