@@ -35,11 +35,15 @@ const Boton = Styled.button`
         border: 8px solid #055f65;
         border-top: 3px solid #055f65;
         border-bottom: 8px solid #640c59;
+        outline: none;
+        box-shadow: none;
     }
     :active{
         border: 15px solid #640c59;
         border-top: 3px solid #640c59;
         border-bottom: 8px solid #640c59;
+        outline: none;
+         box-shadow: none;
     }
     @media (max-width: 650px) {
         top: 8vh;
@@ -83,6 +87,7 @@ const Hola = () => {
  const [index,setIndex] = React.useState('DSC02736_vud8gi')
  const [index2,setIndex2] = React.useState('DSC02736_vud8gi')
  const [ isFetching, setIsFetching ] = React.useState(true)
+ const [ tamano, setTamano ] = React.useState('')
 
  React.useEffect( () => {
   
@@ -95,24 +100,31 @@ const Hola = () => {
     
     }, [] )
 
+ 
  const handleClick = ()  => { 
     
-       
+        setTamano(gallery.length-2)
         setAnimation(!animation) 
-        setIndex(gallery[i+2].public_id)
-        setIndex2(gallery[j+2].public_id)
+        setIndex(gallery[i+1].public_id)
+        setIndex2(gallery[j+1].public_id)
+        console.log(tamano)
         if (i < j) {
             setTimeout(() => { 
                 setI(i+2)
-                
-            }, 1000);}
+                console.log(i)
+                console.log(j)
+            }, 2);}
         else { setTimeout(() => { 
-            setJ(j+2)
-            if ( i+2 === 25) { 
-                setI(0)
-                setJ(1)}                  
-          }, 1000)}
-        
+            setJ(j+2)                 
+          }, 2)}
+          if ( i === tamano-3) { 
+            setI(-1)}
+          if ( j === tamano-1) {
+            setJ(0)
+            console.log('reinicio')
+        console.log(i)
+        console.log(j)
+    } 
     }  
 
     if (window.innerWidth < 650) { 

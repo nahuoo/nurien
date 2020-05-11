@@ -33,7 +33,7 @@ const Portfolio = () => {
 
   useEffect( () => {
   
-    fetch('https://res.cloudinary.com/nurienstudio/image/list/nurien.json')
+    fetch('https://res.cloudinary.com/nurienstudio/image/list/INICIO.json')
     .then(res => res.json())
     .then(data => {
         setGallery(data.resources)

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
 import { GalleryWrapper } from '../assets/css/StyledFotografias'
-import CarrouselFotos from './CarrouselFotos'
+import CarrouselFotos from '../components/CarrouselFotos'
 
 const SeccionFotografias = () => {
 
