@@ -6,11 +6,13 @@ export const GalleryWrapper = styled.div`
     height: auto;
     display: flex;
     flex-direction: row;
-    align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     div{
         margin:0.5%;
+        img {
+            border-radius: 5%;
+        }
     }
     `
 export const Titulo = styled.div`

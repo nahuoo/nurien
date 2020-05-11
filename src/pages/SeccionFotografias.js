@@ -7,6 +7,12 @@ import CarrouselFotos from '../components/CarrouselFotos'
 const SeccionFotografias = () => {
 
     const [ gallery, setGallery ] = useState([])
+    const [ crop, setCrop ] = useState('')
+    const [ height, setHeight] = useState(0)
+
+    const handleSelectedImage = (e) => {
+        console.log(e.target.alt)
+    }
 
     useEffect(() => {
         fetch('https://res.cloudinary.com/nurienstudio/image/list/nurien.json')
@@ -14,8 +20,20 @@ const SeccionFotografias = () => {
         .then(data => {
             setGallery(data.resources)
         })
-    })
-    if (window.innerWidth < 650) {
+        
+        if (window.innerWidth < 650) {
+            setHeight(150)
+            setCrop("limit")
+        }
+        else if(window.innerWidth < 1500) {
+            setHeight(300)
+            setCrop("scale")
+        }
+        else {
+            setHeight(500)
+            setCrop("scale")
+        }
+    }, [])
          return(
             <section>
             <Slogan>
@@ -28,8 +46,8 @@ const SeccionFotografias = () => {
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
-                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
-                            <Transformation height="150" crop="limit"/>
+                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} onClick={handleSelectedImage}>
+                            <Transformation height={height} crop={crop} />
                         </Image> 
                     </div>
                 ))}
@@ -40,33 +58,7 @@ const SeccionFotografias = () => {
 
             
         </section>
-         ) 
-     } else {
-    return (
-        <section>
-            <Slogan>
-                -Portfolio-
-            </Slogan>
-            <CarrouselFotos />
-            <Slogan>
-                -Fotografías-
-            </Slogan>
-            <GalleryWrapper >
-                {gallery.map((image, index)=> (
-                    <div key={index}>
-                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
-                            <Transformation height="300" crop="scale"/>
-                        </Image> 
-                    </div>
-                ))}
-            </GalleryWrapper>
-            <Slogan>
-                -We make your proyect reality-
-            </Slogan>
- */}
-            
-        </section>
-    )}
+    ) 
 }
 
 export default SeccionFotografias
