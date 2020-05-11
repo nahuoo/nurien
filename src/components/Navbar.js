@@ -49,14 +49,14 @@ const Navbar = (props) => {
         </Link>
         <ListUL active={menu}>
             <ListLi>
-                <MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu} Left={'50vw'}>PORTFOLIO</MenuLinks>
                 <SubMenu subMenu={subMenu}>
                     <SubMenuItem onClick={handleBothMenus}><Link to="/fotos" style={LinkStyle}><MenuLinks Glitch={'FOTOGRAFIAS'}>FOTOGRAFIAS</MenuLinks></Link></SubMenuItem>
                     <SubMenuItem onClick={handleBothMenus}><Link to="/videos" style={LinkStyle}><MenuLinks Glitch={'VIDEOS'}>VIDEOS</MenuLinks></Link></SubMenuItem>
                 </SubMenu>
+                <div><MenuLinks Glitch={'PORTFOLIO'} onClick={handleSubMenu}>PORTFOLIO</MenuLinks></div>
             </ListLi>
-            <ListLi subMenu={subMenu}><ScrollIntoView selector="#nosotros" onClick={handleAcordeon}><MenuLinks Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} Left={'63vw'} onClick={handleMenu}>¿QUIENES SOMOS?</MenuLinks></ScrollIntoView></ListLi>
-            <ListLi subMenu={subMenu}><ScrollIntoView selector="#contacto"><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} Left={'83vw'} onClick={handleMenu}>CONTACTO</MenuLinks></ScrollIntoView></ListLi>
+            <ListLi subMenu={subMenu}><ScrollIntoView selector="#nosotros" onClick={handleAcordeon}><MenuLinks Glitch={'¿QUIENES SOMOS?'} subMenu={subMenu} onClick={handleMenu}>¿QUIENES SOMOS?</MenuLinks></ScrollIntoView></ListLi>
+            <ListLi subMenu={subMenu}><ScrollIntoView selector="#contacto"><MenuLinks Glitch={'CONTACTO'} subMenu={subMenu} onClick={handleMenu}>CONTACTO</MenuLinks></ScrollIntoView></ListLi>
         </ListUL>
     </StyledNav>
     )

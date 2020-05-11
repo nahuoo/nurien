@@ -141,6 +141,7 @@ export const ListUL = styled.ul`
   }
   @media (min-width: 1024px) {
     width: 50vw;
+    height: 1000%;
     opacity: 100%;
     transform: none;
     box-shadow: none;
@@ -169,8 +170,12 @@ export const ListLi = styled.li`
   }
   @media (min-width: 1024px) {
     padding: 0;
+    height: 100%;
     width: initial; 
-    display: inline;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
   }
   `
  export const MenuLinks = styled.p`
@@ -222,10 +227,9 @@ export const ListLi = styled.li`
     display: ${props => props.subMenu ? 'none' : 'initial'};
   }
   @media (min-width: 1000px) {
-    position: absolute;
-    top: 1.3vw;
-    left: ${props => props.Left || '' };
+    height: 100%;
     display: initial;
+    text-align: center;
   }
   `
 /* /////////////////////////////////////////////// */
@@ -255,9 +259,10 @@ export const SubMenu = styled.ul`
     padding-bottom: 0;
   }
   @media (min-width: 1000px) {
+    position: absolute;
     width: 210px;
-    top: 75%;
-    left: -56%;
+    top: 100%;
+    left: -30%;
     /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
     background: #000000B3;
     transition: all 0.5s ease-in;
