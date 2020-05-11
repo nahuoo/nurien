@@ -5,7 +5,7 @@ import { GalleryWrapper } from '../assets/css/StyledFotografias'
 import CarrouselFotos from '../components/CarrouselFotos'
 
 const SeccionFotografias = () => {
-
+    const [ i, setI ] = useState('')
     const [ gallery, setGallery ] = useState([])
 
     useEffect(() => {
@@ -15,19 +15,21 @@ const SeccionFotografias = () => {
             setGallery(data.resources)
         })
     })
+
+
     if (window.innerWidth < 650) {
          return(
             <section>
             <Slogan>
                 -Portfolio-
             </Slogan>
-            <CarrouselFotos />
+            <CarrouselFotos  indice={i} />
             <Slogan>
                 -Fotografías-
             </Slogan>
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
-                    <div key={index}>
+                    <div key={index} onClick={() => setI(index) } >
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
                             <Transformation height="150" crop="limit"/>
                         </Image> 
@@ -47,13 +49,13 @@ const SeccionFotografias = () => {
             <Slogan>
                 -Portfolio-
             </Slogan>
-            <CarrouselFotos />
+            <CarrouselFotos indice={i} />
             <Slogan>
                 -Fotografías-
             </Slogan>
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
-                    <div key={index}>
+                    <div key={index} onClick={() => setI(index) }>
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} >
                             <Transformation height="300" crop="scale"/>
                         </Image> 
