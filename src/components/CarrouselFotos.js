@@ -119,11 +119,9 @@ const Hola = () => {
           }, 2)}
           if ( i === tamano-3) { 
             setI(-1)}
-          if ( j === tamano-1) {
+          if ( j === tamano-2) {
             setJ(0)
             console.log('reinicio')
-        console.log(i)
-        console.log(j)
     } 
     }  
 
