@@ -15,7 +15,7 @@ const VideosDiv = Styled.div`
     
 `
 const Imagenes = Styled.div `
-    width:95%;
+    width: 95%;
     padding-left: 5%;
     margin-top:3%;
     display: grid;
@@ -43,12 +43,15 @@ const Imagenes = Styled.div `
         }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1000px) {
         grid-template-columns: 1fr 1fr;
         img {
             width:90%;
             margin: 10px;
         }
+    }
+    @media screen and (min-width: 1550px) {
+        font-size: 22px;
     }
     
 `
@@ -68,6 +71,9 @@ export const Slogan = Styled.h2`
     user-select:none;
     font-family: 'Caviar Dreams';
     border-bottom: 1px solid #FC1EDF;
+    @media screen and (min-width: 1550px) {
+        font-size: 35px;
+    }
 `
 
 const ruta1 = "https://www.youtube.com/embed/A6XIpbDP2U0"

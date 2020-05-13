@@ -117,6 +117,10 @@ form{
  }
    
   }
+
+  @media screen and (min-width: 1550px) {
+        font-size: 22px;
+    }
  `
   export default StyledFormulario
 

@@ -7,11 +7,13 @@ import CarrouselFotos from '../components/CarrouselFotos'
 const SeccionFotografias = () => {
 
     const [ gallery, setGallery ] = useState([])
+    const [ selectedIndex, setSelectedIndex ] = useState(-1)
     const [ crop, setCrop ] = useState('')
     const [ height, setHeight] = useState(0)
 
     const handleSelectedImage = (e) => {
         console.log(e.target.alt)
+        setSelectedIndex(e.target.alt)
     }
 
     useEffect(() => {
@@ -39,7 +41,7 @@ const SeccionFotografias = () => {
             <Slogan>
                 -Portfolio-
             </Slogan>
-            <CarrouselFotos />
+            <CarrouselFotos selectedIndex={selectedIndex} gallery={gallery}/>
             <Slogan>
                 -Fotografías-
             </Slogan>

@@ -231,6 +231,9 @@ export const ListLi = styled.li`
     display: initial;
     text-align: center;
   }
+  @media (min-width: 1550px) {
+    font-size: 25px;
+  }
   `
 /* /////////////////////////////////////////////// */
 /*                    SUBMENU                      */
@@ -262,7 +265,7 @@ export const SubMenu = styled.ul`
     position: absolute;
     width: 210px;
     top: 100%;
-    left: -30%;
+    left: -25%;
     /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
     background: #000000B3;
     transition: all 0.5s ease-in;

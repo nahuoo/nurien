@@ -45,6 +45,9 @@ export const Botton = styled.div`
         display: grid;
         width: 100%;
     }
+    @media screen and (min-width: 1550px) {
+        font-size: 60px;
+    }
 `
 
 
@@ -108,6 +111,9 @@ export const Contacto = styled.div`
         0% { opacity: 0};
         100% { opacity: 1};
     }
+    @media screen and (min-width: 1550px) {
+        font-size: 35px;
+    }
 `
 
 export const DivContacto = styled.div `
@@ -126,6 +132,9 @@ export const DivContacto = styled.div `
         }
     @media screen and (min-width: 1000px) {
         height: ${(props) => props.abierto ? '40vh' : '20vh'};
+    }
+    @media screen and (min-width: 1550px) {
+        font-size: 25px;
     }
 
 `
