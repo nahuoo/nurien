@@ -9,6 +9,7 @@ export const GalleryWrapper = styled.div`
     justify-content: space-evenly;
     flex-wrap: wrap;
     div{
+        cursor:pointer;
         margin:0.5%;
         img {
             border-radius: 5%;

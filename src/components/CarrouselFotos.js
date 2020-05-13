@@ -72,7 +72,8 @@ const Virgo2 = Styled.div`
 `
 const Virgo3 = Styled.div`
     height: 100%;
-    position: abso    height: 100%;lute;
+    position: absolute;
+    height: 100%;
     top: 25%;
     align-content:center;
     transition: 1s ease-out;
@@ -91,46 +92,45 @@ const Hola = ({selectedIndex, gallery}) => {
  const [ tamano, setTamano ] = React.useState('')
 
  React.useEffect( () => {
-    
-    if (gallery !== [] ){
+    console.log(gallery)
+    if (gallery !== [] ){   
         setIsFetching(false)
     }
-
     if (selectedIndex > -1) {
-        /* PONE ACA COMO INYECTAS EL INDEX DE LA FOTO CLICKEADA, PORQUE NO SE QE HICISTE ABAJO
-        DE J+1 GALLERY.LENGHT-2, NO ENTIENDO NADA */
+        /* animacion al cambiar el selectedIndex */
+        setTamano(Number(gallery.length)-2)
+        setI(Number(selectedIndex)-1)
+        setJ(Number(selectedIndex))
+        setIndex(gallery[Number(selectedIndex)].public_id)
+        setIndex2(gallery[Number(selectedIndex)].public_id)
+        setAnimation(false) 
     }
-    },[] )
+    },[selectedIndex] )
 
  
  const handleClick = ()  => { 
-    
-        setTamano(gallery.length-2)
+        setTamano(Number(gallery.length)-2)
         setAnimation(!animation) 
         setIndex(gallery[i+1].public_id)
         setIndex2(gallery[j+1].public_id)
-        console.log(tamano)
-        if (i < j) {
-            setTimeout(() => { 
-                setI(i+2)
-                console.log(i)
-                console.log(j)
-            }, 2);}
-        else { setTimeout(() => { 
-            setJ(j+2)                 
-          }, 2)}
-          if ( i === tamano-3) { 
-            setI(-1)}
-          if ( j === tamano-2) {
-            setJ(0)
-            console.log('reinicio')
-    } 
+        if (i < j) { setI(i+2) }
+        else { 
+            setJ(j+2)              
+            if ( i === tamano-3) { 
+                setI(-1)
+                setJ(0)
+                }
+            if ( j === tamano-2) {
+                setJ(0)
+                setI(-1)
+                console.log('reinicio')
+    } }
     }  
 
     if (window.innerWidth < 650) { 
         return(
             isFetching ? <h2>cargando...</h2> : 
-            <Virgo>
+            <Virgo id='carrousel'>
                 <DivNegro />
                 <Virgo2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
@@ -149,7 +149,7 @@ const Hola = ({selectedIndex, gallery}) => {
 
     return (
         isFetching ? <h2>cargando...</h2> : 
-            <Virgo>
+            <Virgo id='carrousel'>
                 <DivNegro />
                 <Virgo2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
