@@ -92,7 +92,6 @@ const Hola = ({selectedIndex, gallery}) => {
  const [ tamano, setTamano ] = React.useState('')
 
  React.useEffect( () => {
-    console.log(gallery)
     if (gallery !== [] ){   
         setIsFetching(false)
     }
