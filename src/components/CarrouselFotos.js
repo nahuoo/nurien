@@ -62,7 +62,8 @@ const Virgo = Styled.div`
 `
 
 const Virgo2 = Styled.div`
-    position:absolute;
+    height: 100%;
+    position: absolute;
     top: 25%;
     transition: 1s ease-out;
     clip-path: ${(props) => props.animation ? 'inset(0 0% 0 100% )' : 'inset(0 0% 0 0%)'};
@@ -70,7 +71,8 @@ const Virgo2 = Styled.div`
     
 `
 const Virgo3 = Styled.div`
-    position: absolute;
+    height: 100%;
+    position: abso    height: 100%;lute;
     top: 25%;
     align-content:center;
     transition: 1s ease-out;
@@ -78,10 +80,9 @@ const Virgo3 = Styled.div`
    
 `
 
-const Hola = () => {
+const Hola = ({selectedIndex, gallery}) => {
 
  const [animation,setAnimation] = React.useState('')
- const [gallery,setGallery] = React.useState([])
  const [i,setI] = React.useState(-1)
  const [j,setJ] = React.useState(0)
  const [index,setIndex] = React.useState('DSC02736_vud8gi')
@@ -90,15 +91,16 @@ const Hola = () => {
  const [ tamano, setTamano ] = React.useState('')
 
  React.useEffect( () => {
-  
-    fetch('https://res.cloudinary.com/nurienstudio/image/list/nurien.json')
-    .then(res => res.json())
-    .then(data => {
-        setGallery(data.resources)
-        setIsFetching(false)
-    })  
     
-    }, [] )
+    if (gallery !== [] ){
+        setIsFetching(false)
+    }
+
+    if (selectedIndex > -1) {
+        /* PONE ACA COMO INYECTAS EL INDEX DE LA FOTO CLICKEADA, PORQUE NO SE QE HICISTE ABAJO
+        DE J+1 GALLERY.LENGHT-2, NO ENTIENDO NADA */
+    }
+    },[] )
 
  
  const handleClick = ()  => { 
@@ -131,15 +133,15 @@ const Hola = () => {
             <Virgo>
                 <DivNegro />
                 <Virgo2 animation={animation} >
-                <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                <Transformation height='450' width="300" crop="fill" />
-                </Image>
+                    <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
+                        <Transformation height='450' width="300" crop="fill" />
+                    </Image>
                 </Virgo2>
                 <Boton onClick={handleClick} >Próxima foto</Boton>
                 <Virgo3 animation={animation} >
-                <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                <Transformation height='450' width="300" crop="fill" />
-                </Image>
+                    <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
+                        <Transformation height='450' width="300" crop="fill" />
+                    </Image>
                 </Virgo3>
              </Virgo>
         ) } 
@@ -150,15 +152,15 @@ const Hola = () => {
             <Virgo>
                 <DivNegro />
                 <Virgo2 animation={animation} >
-                <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                <Transformation height='550' width="1000" crop="fit" />
-                </Image>
+                    <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
+                        <Transformation height='550' width="1000" crop="fit" />
+                    </Image>
                 </Virgo2>
                 <Boton onClick={handleClick} >Próxima foto</Boton>
                 <Virgo3 animation={animation} >
-                <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                <Transformation height='550' width="1000" crop="fit" />
-                </Image>
+                    <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
+                        <Transformation height='550' width="1000" crop="fit" />
+                    </Image>
                 </Virgo3>
              </Virgo>
     )}

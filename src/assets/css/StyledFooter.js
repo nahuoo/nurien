@@ -22,12 +22,10 @@ const StyledFooter = styled.footer`
  .contacto{
    padding-top:30px;
  }
-
   ul {
     
     height: 18vh;
     
-
   }
   
   ul li{
@@ -60,7 +58,6 @@ const StyledFooter = styled.footer`
   .direction {
     line-height: 1.5; 
   }
-
   @media (min-width: 650px) {
     padding: 10vh;
     height: 200vh;
@@ -80,7 +77,6 @@ const StyledFooter = styled.footer`
       display: initial;
     }
   }
-
   @media (min-width: 1000px) {
     padding: 5vh;
     padding-top:0;
@@ -111,6 +107,20 @@ const StyledFooter = styled.footer`
   }
   }
  
+  @media (min-width: 1500px) {
+    height: 50vh;
+  
+    ul li{
+      font-size: 18px;
+    }
+    .copyright {
+      font-size: 15px;
+    }
+    p{
+      font-size: 15px;
+    }
+  }
 `
 
 export default StyledFooter
+
