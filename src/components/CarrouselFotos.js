@@ -72,7 +72,7 @@ const Virgo2 = Styled.div`
 `
 const Virgo3 = Styled.div`
     height: 100%;
-    position: abso    height: 100%;lute;
+    position: absolute;
     top: 25%;
     align-content:center;
     transition: 1s ease-out;
@@ -130,17 +130,17 @@ const Hola = ({selectedIndex, gallery}) => {
     if (window.innerWidth < 650) { 
         return(
             isFetching ? <h2>cargando...</h2> : 
-            <Virgo>
+            <Virgo id="carrouselfotos">
                 <DivNegro />
                 <Virgo2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="fill" />
+                        <Transformation height='450' width="300" crop="scale" />
                     </Image>
                 </Virgo2>
                 <Boton onClick={handleClick} >Próxima foto</Boton>
                 <Virgo3 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="fill" />
+                        <Transformation height='450' width="300" crop="scale" />
                     </Image>
                 </Virgo3>
              </Virgo>
@@ -149,17 +149,17 @@ const Hola = ({selectedIndex, gallery}) => {
 
     return (
         isFetching ? <h2>cargando...</h2> : 
-            <Virgo>
+            <Virgo id="carrouselfotos">
                 <DivNegro />
                 <Virgo2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height='550' width="1000" crop="fit" />
+                        <Transformation height='550' crop="scale" />
                     </Image>
                 </Virgo2>
                 <Boton onClick={handleClick} >Próxima foto</Boton>
                 <Virgo3 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height='550' width="1000" crop="fit" />
+                        <Transformation height='550' crop="scale" />
                     </Image>
                 </Virgo3>
              </Virgo>

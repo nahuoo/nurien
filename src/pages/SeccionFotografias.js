@@ -3,6 +3,7 @@ import {Slogan} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
 import { GalleryWrapper } from '../assets/css/StyledFotografias'
 import CarrouselFotos from '../components/CarrouselFotos'
+import ScrollIntoView from 'react-scroll-into-view'
 
 const SeccionFotografias = () => {
 
@@ -48,9 +49,12 @@ const SeccionFotografias = () => {
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
+                        <ScrollIntoView selector="#carrouselfotos">
                         <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} onClick={handleSelectedImage}>
                             <Transformation height={height} crop={crop} />
                         </Image> 
+
+                        </ScrollIntoView>
                     </div>
                 ))}
             </GalleryWrapper>
