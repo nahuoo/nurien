@@ -83,7 +83,7 @@ const StyledFooter = styled.footer`
 
   @media (min-width: 1000px) {
     padding: 5vh;
-    padding-top:10%;
+    padding-top:0;
     margin-left:10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -91,21 +91,20 @@ const StyledFooter = styled.footer`
     flex-direction: row;
     height: 90vh;
     ul li{
-      font-size: 15px;
+      font-size: 18px;
       letter-spacing: 1.5pt;
       margin-bottom: 1em;
     }
     .copyright {
       position:absolute;
-      font-size: 12px;
+      font-size: 15px;
       bottom: 5%;
       letter-spacing: 1.5pt;
       left:35%
     }
     p{
-    font-size: 12px;
+    font-size: 15px;
     position:absolute;
-    font-size: 12px;
     bottom: 1%;
     letter-spacing: 1.5pt;
     left:32%
