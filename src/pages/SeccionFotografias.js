@@ -13,7 +13,6 @@ const SeccionFotografias = () => {
     const [ height, setHeight] = useState(0)
 
     const handleSelectedImage = (e) => {
-        console.log(e.target.alt)
         setSelectedIndex(e.target.alt)
     }
 
@@ -49,11 +48,10 @@ const SeccionFotografias = () => {
             <GalleryWrapper >
                 {gallery.map((image, index)=> (
                     <div key={index}>
-                        <ScrollIntoView selector="#carrouselfotos">
-                        <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} onClick={handleSelectedImage}>
-                            <Transformation height={height} crop={crop} />
-                        </Image> 
-
+                        <ScrollIntoView selector='#carrousel'>
+                            <Image cloudName="nurienstudio" publicId={image.public_id} alt={index} onClick={handleSelectedImage}>
+                                <Transformation height={height} crop={crop} />
+                            </Image> 
                         </ScrollIntoView>
                     </div>
                 ))}
@@ -61,7 +59,6 @@ const SeccionFotografias = () => {
             <Slogan>
                 -We make your proyect reality-
             </Slogan>
-
             
         </section>
     ) 
