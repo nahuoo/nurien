@@ -53,7 +53,7 @@ const Boton = Styled.button`
     
 `
 
-const Virgo = Styled.div`
+const WrapperCarrousel = Styled.div`
     height: 80vh;
     display:flex;
     align-content: center;
@@ -61,7 +61,7 @@ const Virgo = Styled.div`
    
 `
 
-const Virgo2 = Styled.div`
+const Card1 = Styled.div`
     height: 100%;
     position: absolute;
     top: 25%;
@@ -70,7 +70,7 @@ const Virgo2 = Styled.div`
  
     
 `
-const Virgo3 = Styled.div`
+const Card2 = Styled.div`
     height: 100%;
     position: absolute;
     height: 100%;
@@ -81,7 +81,7 @@ const Virgo3 = Styled.div`
    
 `
 
-const Hola = ({selectedIndex, gallery}) => {
+const CarrouselFotos = ({selectedIndex, gallery, height,crop}) => {
 
  const [animation,setAnimation] = React.useState('')
  const [i,setI] = React.useState(-1)
@@ -126,43 +126,23 @@ const Hola = ({selectedIndex, gallery}) => {
     } }
     }  
 
-    if (window.innerWidth < 650) { 
-        return(
-            isFetching ? <h2>cargando...</h2> : 
-            <Virgo id='carrousel'>
-                <DivNegro />
-                <Virgo2 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="scale" />
-                    </Image>
-                </Virgo2>
-                <Boton onClick={handleClick} >Próxima foto</Boton>
-                <Virgo3 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="scale" />
-                    </Image>
-                </Virgo3>
-             </Virgo>
-        ) } 
-    else {
-
     return (
         isFetching ? <h2>cargando...</h2> : 
-            <Virgo id='carrousel'>
+            <WrapperCarrousel id='carrousel'>
                 <DivNegro />
-                <Virgo2 animation={animation} >
+                <Card1 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
                         <Transformation height='550' crop="scale" />
                     </Image>
-                </Virgo2>
+                </Card1>
                 <Boton onClick={handleClick} >Próxima foto</Boton>
-                <Virgo3 animation={animation} >
+                <Card2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
                         <Transformation height='550' crop="scale" />
                     </Image>
-                </Virgo3>
-             </Virgo>
+                </Card2>
+             </WrapperCarrousel>
     )}
-}
 
-export default Hola
+
+export default CarrouselFotos

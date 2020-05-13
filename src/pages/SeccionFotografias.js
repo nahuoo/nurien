@@ -41,7 +41,7 @@ const SeccionFotografias = () => {
             <Slogan>
                 -Portfolio-
             </Slogan>
-            <CarrouselFotos selectedIndex={selectedIndex} gallery={gallery}/>
+            <CarrouselFotos selectedIndex={selectedIndex} gallery={gallery} height={height} crop={crop}/>
             <Slogan>
                 -Fotografías-
             </Slogan>
