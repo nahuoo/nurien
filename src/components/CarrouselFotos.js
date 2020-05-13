@@ -81,7 +81,7 @@ const Virgo3 = Styled.div`
    
 `
 
-const Hola = ({selectedIndex, gallery}) => {
+const Hola = ({selectedIndex, gallery, height,crop}) => {
 
  const [animation,setAnimation] = React.useState('')
  const [i,setI] = React.useState(-1)
@@ -126,26 +126,6 @@ const Hola = ({selectedIndex, gallery}) => {
     } }
     }  
 
-    if (window.innerWidth < 650) { 
-        return(
-            isFetching ? <h2>cargando...</h2> : 
-            <Virgo id='carrousel'>
-                <DivNegro />
-                <Virgo2 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="fill" />
-                    </Image>
-                </Virgo2>
-                <Boton onClick={handleClick} >Próxima foto</Boton>
-                <Virgo3 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height='450' width="300" crop="fill" />
-                    </Image>
-                </Virgo3>
-             </Virgo>
-        ) } 
-    else {
-
     return (
         isFetching ? <h2>cargando...</h2> : 
             <Virgo id='carrousel'>
@@ -163,6 +143,6 @@ const Hola = ({selectedIndex, gallery}) => {
                 </Virgo3>
              </Virgo>
     )}
-}
+
 
 export default Hola
