@@ -18,23 +18,23 @@ const DivNegro = Styled.div`
 const Boton = Styled.button`
     position: absolute;
     user-select:none;
-    font-family: 'Caviar Dreams';
     top: 50vh;
     left: 2%;
-    color:white;
+    color: #640c59;
     background: transparent;
-    font-size: 1.5em;
-    border: 3px solid #055f65;
-    border-top: 8px solid #640c59;
-    border-bottom: 8px solid #055f65 ;
+    font-size: 2.5em;
+    border: 2px solid white;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white ;
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
+    width: 70px;
+    height: 70px;
     transition: .2s linear;
     :hover{
-        border: 8px solid #055f65;
+        border: 4px solid #055f65;
+        text-align: right;
         border-top: 3px solid #055f65;
-        border-bottom: 8px solid #640c59;
+        border-right: 8px solid #640c59;
         outline: none;
         box-shadow: none;
     }
@@ -55,6 +55,7 @@ const Boton = Styled.button`
 
 const WrapperCarrousel = Styled.div`
     height: 80vh;
+    width: 95vw;
     display:flex;
     align-content: center;
     justify-content: center;
@@ -73,7 +74,6 @@ const Card1 = Styled.div`
 const Card2 = Styled.div`
     height: 100%;
     position: absolute;
-    height: 100%;
     top: 25%;
     align-content:center;
     transition: 1s ease-out;
@@ -81,7 +81,7 @@ const Card2 = Styled.div`
    
 `
 
-const CarrouselFotos = ({selectedIndex, gallery, height,crop}) => {
+const CarrouselFotos = ({selectedIndex, gallery, height}) => {
 
  const [animation,setAnimation] = React.useState('')
  const [i,setI] = React.useState(-1)
@@ -132,13 +132,13 @@ const CarrouselFotos = ({selectedIndex, gallery, height,crop}) => {
                 <DivNegro />
                 <Card1 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height='550' width="1000" crop="fit" />
+                        <Transformation gravity='auto' height={height+250} width={height+200} crop='fill' />
                     </Image>
                 </Card1>
-                <Boton onClick={handleClick} >Próxima foto</Boton>
+                <Boton onClick={handleClick} ><i class="fa fa-arrow-right"></i></Boton>
                 <Card2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height='550' width="1000" crop="fit" />
+                        <Transformation gravity='auto' height={height+250} width={height+200} crop='fill' />
                     </Image>
                 </Card2>
              </WrapperCarrousel>
