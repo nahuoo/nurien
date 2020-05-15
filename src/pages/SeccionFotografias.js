@@ -28,13 +28,14 @@ const SeccionFotografias = () => {
             setCrop("limit")
         }
         else if(window.innerWidth < 1500) {
-            setHeight(300)
+            setHeight(400)
             setCrop("scale")
         }
         else {
-            setHeight(500)
+            setHeight(700)
             setCrop("scale")
         }
+       
     }, [])
          return(
             <section>
