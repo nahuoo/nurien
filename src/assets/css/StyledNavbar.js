@@ -51,7 +51,7 @@ export const StyledNav = styled.nav`
   }
   @media (min-width: 1000px) {
     width: 100%;
-    height: 0.5vw;
+    height: 0.3vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -63,7 +63,7 @@ export const StyledNav = styled.nav`
 /* /////////////////////////////////////////////// */
 export const Line = styled.div`
   position: absolute;
-  height:30%;
+  height:26%;
   width: 100%;
   z-index: -1;
   background: ${(props) => props.color || 'black'};
