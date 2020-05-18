@@ -130,7 +130,7 @@ const Card2 = Styled.div`
     border-radius: 7%;
 
     @media (min-width: 630px){
-      
+
     }
     img {
     position: absolute;
