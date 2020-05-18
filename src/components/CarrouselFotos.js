@@ -182,14 +182,14 @@ const CarrouselFotos = ({selectedIndex, gallery, height}) => {
                 <DivNegro />
                 <Card1 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height={height+(window.innerWidth/100*20)} width={height+(window.innerWidth/100*25)} crop='fill' />
+                        <Transformation height={height+(window.innerWidth/100*20)} width={window.innerWidth/2} crop='fill' />
                     </Image>
                 </Card1>
                 <Boton onClick={handleClick} left='85%' ><i class="fa fa-arrow-right"></i></Boton>
                 <Boton onClick={handleClickReversa} left='10%' ><i class="fa fa-arrow-left"></i></Boton>
                 <Card2 animation={animation} >
                     <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height={height+(window.innerWidth/100*20)} width={height+(window.innerWidth/100*25)} crop='fit' />
+                        <Transformation height={height+(window.innerWidth/100*20)} width={window.innerWidth/2} crop='fit' />
                     </Image>
                 </Card2>
              </WrapperCarrousel>
