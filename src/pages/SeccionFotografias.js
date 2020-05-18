@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Slogan} from './SeccionVideos'
+import {Slogan, Seccion} from './SeccionVideos'
 import { Image,Transformation } from 'cloudinary-react'
 import { GalleryWrapper } from '../assets/css/StyledFotografias'
 import CarrouselFotos from '../components/CarrouselFotos'
@@ -23,13 +23,13 @@ const SeccionFotografias = () => {
             setGallery(data.resources)
         })
         
-        if (window.innerWidth < 650) {
+        if (window.innerWidth < 1000) {
             setHeight(150)
             setCrop("limit")
         }
         else if(window.innerWidth < 1500) {
             setHeight(400)
-            setCrop("scale")
+            setCrop("fit")
         }
         else {
             setHeight(700)
@@ -38,9 +38,9 @@ const SeccionFotografias = () => {
        
     }, [])
          return(
-            <section>
+            <Seccion>
             <Slogan>
-                -Portfolio-
+                Portfolio
             </Slogan>
             <CarrouselFotos selectedIndex={selectedIndex} gallery={gallery} height={height} crop={crop}/>
             <Slogan>
@@ -61,7 +61,7 @@ const SeccionFotografias = () => {
                 -We make your proyect reality-
             </Slogan>
             
-        </section>
+        </Seccion>
     ) 
 }
 

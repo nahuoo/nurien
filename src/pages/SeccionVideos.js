@@ -11,8 +11,13 @@ import Nurienreel2020 from '../assets/img/Nurienreel2020.jpg'
 import Nurienwoodland from '../assets/img/Nurienwoodland.jpg'
 import NurienLyrics from '../assets/img/NurienLyrics.jpg'
 
-const VideosDiv = Styled.div`
-    
+export const Seccion = Styled.section`
+    @media (min-width: 600px){
+        margin-top: 10vh;
+    }
+    @media (min-width: 1000px){
+        margin-top: 30px;
+    }
 `
 const Imagenes = Styled.div `
     width: 95%;
@@ -58,7 +63,7 @@ const Imagenes = Styled.div `
 
 export const Slogan = Styled.h2`
     user-select:none;
-    margin-top:10vh;
+    margin-top:5vh;
     width: 100%;
     color: white;
     padding: .5em 0;
@@ -71,6 +76,7 @@ export const Slogan = Styled.h2`
     user-select:none;
     font-family: 'Caviar Dreams';
     border-bottom: 1px solid #FC1EDF;
+
     @media screen and (min-width: 1550px) {
         font-size: 35px;
     }
@@ -98,7 +104,7 @@ const SeccionVideos = () => {
     }
 
     return (
-        <VideosDiv>
+        <Seccion>
             <Slogan>-We make your proyect reality-</Slogan>
           <Video  video={cambioVideo} />
            
@@ -148,7 +154,7 @@ const SeccionVideos = () => {
             </div>
 
             </Imagenes>
-        </VideosDiv>
+        </Seccion>
 
     )
 }

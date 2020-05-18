@@ -1,6 +1,8 @@
 import React from 'react'
 import Styled from 'styled-components'
 import { Image,Transformation } from 'cloudinary-react'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import ModalImg from './Modal-img'
 
 const DivNegro = Styled.div`
     position: absolute;
@@ -9,16 +11,12 @@ const DivNegro = Styled.div`
     background: black;
     color:white;
     height: 15vh;
-
-    @media (min-width: 650px) {
-        
-    }
     
 `
 const Boton = Styled.button`
     position: absolute;
     user-select:none;
-    top: 70vh;
+    top: 60%;
     left: ${(props) => props.left};
     color: #FC1EDF;
     background: transparent;
@@ -63,136 +61,195 @@ const Boton = Styled.button`
 
 const WrapperCarrousel = Styled.div`
     height: 80vh;
-    width: 95vw;
+    width: 100vw;
     display:flex;
-    align-content: center;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
    
+.Slide-enter {
+  position: absolute;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.Slide-enter-active {
+  position: absolute;
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 1s ease;
+}
+/*Cuando se desmonta*/
+.Slide-exit {
+  position: absolute;
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.Slide-exit-active {
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+
+.Slide-reverse-enter {
+  position: absolute;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.Slide-reverse-enter-active {
+  position: absolute;
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 1s ease;
+}
+/*Cuando se desmonta*/
+.Slide-reverse-exit {
+  position: absolute;
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.Slide-reverse-exit-active {
+  position: absolute;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease;
+}
 `
 
-const Card1 = Styled.div`
-    height: 85%;
-    position: absolute;
-    top: 25%;
-    transition: 1s ease-out;
-    clip-path: ${(props) => props.animation ? 'inset(0 0% 0 100% )' : 'inset(0 0% 0 0%)'};
- 
-    
-`
 const Card2 = Styled.div`
-    height: 85%;
-    position: absolute;
-    top: 25%;
-    align-content:center;
+    height: 90%;
+    position: relative;
     transition: 1s ease-out;
-    clip-path: ${(props) => props.animation ? 'inset(0 0% 0 0% )' : 'inset(0 100% 0 0%)'};
-   
-`
+    width: 90%;
+    overflow: hidden;
+    border-radius: 7%;
+
+    @media (min-width: 630px){
+      
+    }
+    img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    border-radius: 7%;
+    }
+
+  @media (min-width: 1000px){
+    img{
+      position: absolute;
+      height: 100%;
+      border-radius: 5%;
+      left: 0; 
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+    }
+
+  }
+  `
+    
+
 
 const CarrouselFotos = ({selectedIndex, gallery, height}) => {
- const [animation,setAnimation] = React.useState('')
- const [i,setI] = React.useState(-1)
- const [j,setJ] = React.useState(0)
- const [index,setIndex] = React.useState('IMG_2591_uqcwvn')
- const [index2,setIndex2] = React.useState('IMG_2591_uqcwvn')
+
+ const [ activeIndex,setActiveIndex ] = React.useState(-1)
  const [ isFetching, setIsFetching ] = React.useState(true)
- const [ tamano, setTamano ] = React.useState('')
-
-
+ const [ animation, setAnimation ] = React.useState('Slide-reverse')
+ const [ imgSize, setImgSize ] = React.useState(0)
+ const [ selectedPhoto, setSelectedPhoto ] = React.useState('')
+ const [ showModal, setShowModal ] = React.useState(false)
+ 
  React.useEffect( () => {
 
-    if (gallery !== [] ){   
+    if (gallery.length !== 0 ){   
         setIsFetching(false)
+        setActiveIndex(0)
     }
-    if (selectedIndex > -1) {
-        /* animacion al cambiar el selectedIndex */
-        setTamano(Number(gallery.length)-2)
-        setI(Number(selectedIndex)-1)
-        setJ(Number(selectedIndex))
-        setIndex(gallery[Number(selectedIndex)].public_id)
-        setIndex2(gallery[Number(selectedIndex)].public_id)
-        setAnimation(false) 
+    if (selectedIndex !== -1 ){
+      setActiveIndex(parseInt(selectedIndex))
     }
-    },[selectedIndex] )
 
- 
- const handleClick = ()  => { 
-        setTamano(Number(gallery.length)-2)
-        setAnimation(!animation) 
-        setIndex(gallery[i+1].public_id)
-        setIndex2(gallery[j+1].public_id)
-        if (i < j) {
-             setI(i+2)
-             if ( i >= Number(tamano)-2) { 
-                setI(-1)
-                setJ(0)
-                }
-            if ( j >= Number(tamano)-1) {
-                setJ(0)
-                setI(-1)
-            }}
-        else { 
-            setJ(j+2)              
-            if ( i >= Number(tamano)-2) { 
-                setI(-1)
-                setJ(0)
-                }
-            if ( j >= Number(tamano)-1) {
-                setJ(0)
-                setI(-1)
-    } }
-    }  
-
-    const handleClickReversa = ()  => { 
-        setAnimation(!animation) 
-        setIndex(gallery[i-1].public_id)
-        setIndex2(gallery[j-1].public_id)
-        if  (i <= 1 || j <= 1) {
-            setI(Number(tamano))
-            setJ(Number(tamano))
+    switch (true){
+      case (height === 150):
+        //tablet
+        if (window.innerHeight < window.innerWidth ){
+          setImgSize(250)
         }
-        if (i > j) { 
-            setI(i-2)
-            if ( i <= 2 ) { 
-                setI(Number(tamano))
-                setJ(Number(tamano))
-                }
-            if ( j <= 2 ) {
-                setJ(Number(tamano))
-                setI(Number(tamano))
+        //mobile
+        else {
+          setImgSize(450)
+        }
+      break
+      //desktop
+      case (height === 400 ) :
+        setImgSize(500)
+      break
+      //1080
+      default:
+        setImgSize(650)
+      break
+    }
 
-                }
-            }
-        else { 
-            setJ(j-2)              
-            if ( i <= 2 ) { 
-                setI(Number(tamano))
-                setJ(Number(tamano))
-                }
-            if ( j <= 2 ) {
-                setJ(Number(tamano))
-                setI(Number(tamano))
+    },[gallery, selectedIndex, height] )
 
-    } }
-    }  
+    const left = () => {
+        if(activeIndex > 0){
+           setActiveIndex(activeIndex - 1)
+         }
+         else {
+           setActiveIndex(gallery.length - 1)
+         }
+        setAnimation('Slide')
+      }
+      const right = () => {
+        if(activeIndex < gallery.length - 1){
+         setActiveIndex(activeIndex + 1)
+        }
+        else {
+          setActiveIndex(0)
+        }
+        setAnimation('Slide-reverse')
+      }
+      const handleSelected = (e) => {
+        handleModal(e.target.src.slice(65))
+      }
+
+      const handleModal = (src) => {
+
+        setSelectedPhoto(src)
+        setShowModal(!showModal)
+    
+      }
 
     return (
         isFetching ? <h2>cargando...</h2> : 
             <WrapperCarrousel id='carrousel'>
-                <DivNegro />
-                <Card1 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index} alt="FullScreen">
-                        <Transformation height={parseInt(height+(window.innerWidth/100*20))} width={parseInt(window.innerWidth/2)} crop='fill' />
-                    </Image>
-                </Card1>
-                <Boton onClick={handleClick} left='85%' ><i class="fa fa-arrow-right"></i></Boton>
-                <Boton onClick={handleClickReversa} left='10%' ><i class="fa fa-arrow-left"></i></Boton>
-                <Card2 animation={animation} >
-                    <Image cloudName="nurienstudio" publicId={index2} alt="FullScreen">
-                        <Transformation height={parseInt(height+(window.innerWidth/100*20))} width={parseInt(window.innerWidth/2)} crop='fill' />
-                    </Image>
-                </Card2>
-             </WrapperCarrousel>
+              <DivNegro />
+              <Card2>
+              <TransitionGroup>
+                <CSSTransition
+                  timeout={1000}
+                  classNames={animation}
+                  key={activeIndex}
+                >
+                  <Image cloudName="nurienstudio" publicId={gallery[activeIndex].public_id} alt="FullScreen" onClick={handleSelected}>
+                    <Transformation height={imgSize} crop='fill' />
+                  </Image> 
+                </CSSTransition>
+              </TransitionGroup>
+              </Card2>
+              <Boton onClick={right} left='85%' ><i className="fa fa-arrow-right"></i></Boton>
+              <Boton onClick={left} left='5%' ><i className="fa fa-arrow-left"></i></Boton>
+              { showModal &&  <ModalImg modalToggle={handleModal} selectedPhoto={selectedPhoto} />}
+            </WrapperCarrousel>
     )}
 
 
