@@ -10,6 +10,9 @@ import Nurienreel from '../assets/img/Nurienreel.jpg'
 import Nurienreel2020 from '../assets/img/Nurienreel2020.jpg'
 import Nurienwoodland from '../assets/img/Nurienwoodland.jpg'
 import NurienLyrics from '../assets/img/NurienLyrics.jpg'
+import Nurienmax from '../assets/img/Nurienmax.jpg'
+import Nurienfad from '../assets/img/Nurienfad.jpg'
+import Nurienhuellas from '../assets/img/Nurienhuellas.jpg'
 
 const VideosDiv = Styled.div`
     
@@ -85,7 +88,9 @@ const ruta6 = "https://www.youtube.com/embed/UxNu7wilrWs"
 const ruta7 = "https://www.youtube.com/embed/sHR4qJBz_1w"
 const ruta8 = "https://www.youtube.com/embed/ddE6ksAhZx4"
 const ruta9 = "https://www.youtube.com/embed/Qb-Ah5QfMi4"
-
+const ruta10 = "https://www.youtube.com/embed/GDFvEkdPO7I"
+const ruta11 = "https://www.youtube.com/embed/ALI45eyoQA0"
+const ruta12 = "https://www.youtube.com/embed/0o8CaH1aO70"
 
 
 const SeccionVideos = () => {
@@ -146,7 +151,18 @@ const SeccionVideos = () => {
                 <img src={NurienLyrics} alt='Dope Friends' onClick={() => handleClick(ruta9)} />
                 <p>R CA$H x HANZO - DOPE FIENDS (Lyrics Video)</p>
             </div>
-
+            <div>
+                <img src={Nurienmax} alt='Dope Friends' onClick={() => handleClick(ruta10)} />
+                <p>Morwen "Un Futuro" Video Oficial</p>
+            </div>
+            <div>
+                <img src={Nurienfad} alt='Dope Friends' onClick={() => handleClick(ruta11)} />
+                <p>R.CA$H - F.A.D (Shot by NURIEN)</p>
+            </div>
+            <div>
+                <img src={Nurienhuellas} alt='Dope Friends' onClick={() => handleClick(ruta12)} />
+                <p>Pura Vida - Huellas (Video Oficial)</p>
+            </div>
             </Imagenes>
         </VideosDiv>
 

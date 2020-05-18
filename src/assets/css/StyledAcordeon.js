@@ -46,7 +46,7 @@ export const Botton = styled.div`
         width: 100%;
     }
     @media screen and (min-width: 1550px) {
-        font-size: 60px;
+        font-size: 40px;
     }
 `
 

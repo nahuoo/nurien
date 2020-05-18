@@ -232,7 +232,7 @@ export const ListLi = styled.li`
     text-align: center;
   }
   @media (min-width: 1550px) {
-    font-size: 25px;
+    font-size: 20px;
   }
   `
 /* /////////////////////////////////////////////// */
