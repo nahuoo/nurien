@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import ModalImg from './Modal-img'
 
 const DivNegro = Styled.div`
-    position: absolute;
+    position: absolute;}
     top: 80vh;
     width: 100%;
     background: black;
@@ -61,7 +61,7 @@ const Boton = Styled.button`
 
 const WrapperCarrousel = Styled.div`
     height: 80vh;
-    width: 100vw;
+    width: 98vw;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -140,6 +140,7 @@ const Card2 = Styled.div`
     right: -9999px;
     margin: auto;
     border-radius: 7%;
+    left:15%
     }
 
   @media (min-width: 1000px){

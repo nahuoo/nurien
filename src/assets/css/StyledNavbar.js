@@ -68,6 +68,11 @@ export const Line = styled.div`
   z-index: -1;
   background: ${(props) => props.color || 'black'};
   top: ${(props) => props.top || '0'};
+
+  @media (min-width: 1500px){
+    height: 18%;
+    top: ${(props => props.top === '20%' ? '27%' : '48%')}
+  }
 `
 /* /////////////////////////////////////////////// */
 /*                    LOGO                         */
