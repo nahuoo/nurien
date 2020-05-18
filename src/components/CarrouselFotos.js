@@ -90,7 +90,6 @@ const Card2 = Styled.div`
 `
 
 const CarrouselFotos = ({selectedIndex, gallery, height}) => {
-
  const [animation,setAnimation] = React.useState('')
  const [i,setI] = React.useState(-1)
  const [j,setJ] = React.useState(0)
