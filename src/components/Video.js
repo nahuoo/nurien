@@ -23,6 +23,7 @@ const Video = (props) => {
     return(
         <StyledVideo id="video">
             <iframe 
+                title='Nurien'
                 width="100%" 
                 height="100%" 
                 src={props.video}
