@@ -46,7 +46,7 @@ export const StyledNav = styled.nav`
   color: white;
   top:0px;
   z-index: 100;
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     height: 4vw;
   }
   @media (min-width: 1000px) {
@@ -71,7 +71,7 @@ export const Line = styled.div`
 
   @media (min-width: 1500px){
     height: 18%;
-    top: ${(props => props.top === '20%' ? '27%' : '48%')}
+    top: ${(props => props.top === '20%' ? '30%' : '51%')}
   }
 `
 /* /////////////////////////////////////////////// */
@@ -86,7 +86,7 @@ export const Logo = styled.div`
     max-width: 150%;
     max-height: 150%;
   }
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     height: 12vw; 
     left: 37%;
   }
@@ -140,7 +140,7 @@ export const ListUL = styled.ul`
   opacity: ${(props) => props.active ? '100%' : '0%' };
   transform: ${(props) => props.active ? 'translateY(0%) translateX(0%) scale(1)' : 'translateY(-50%) translateX(0%) scale(0)'};
 
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     top: 10vw;
     padding: 0vw 3vw;
   }
@@ -170,7 +170,7 @@ export const ListLi = styled.li`
     padding-bottom: 0;
     
   }
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     display: ${props => props.subMenu ? 'none' : 'initial'};
   }
   @media (min-width: 1024px) {
@@ -228,7 +228,7 @@ export const ListLi = styled.li`
 		    animation: ${glitch} .4s cubic-bezier(.25, .46, .45, .94) reverse both 1;
 	    }
     }
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     display: ${props => props.subMenu ? 'none' : 'initial'};
   }
   @media (min-width: 1000px) {
@@ -263,7 +263,7 @@ export const SubMenu = styled.ul`
   & > ${SubMenuItem} > a > ${MenuLinks}::after{
     animation: ${props => props.subMenu ? css`${glitch} .4s cubic-bezier(.25, .46, .45, .94) reverse both 1` : ''};
   }
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     padding-bottom: 0;
   }
   @media (min-width: 1000px) {

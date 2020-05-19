@@ -15,7 +15,7 @@ import Nurienfad from '../assets/img/Nurienfad.jpg'
 import Nurienhuellas from '../assets/img/Nurienhuellas.jpg'
 
 export const Seccion = Styled.section`
-    @media (min-width: 600px){
+    @media (min-width: 630px){
         margin-top: 10vh;
     }
     @media (min-width: 1000px){

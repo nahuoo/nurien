@@ -36,7 +36,7 @@ const Navbar = (props) => {
     return (
     <StyledNav> 
         <Line color={'#0deefe60'} top={'20%'}/>
-        <Line color={'#FC1EDF60'} top={'55%'}/>
+        <Line color={'#FC1EDF60'} top={'50%'}/>
         <Burger onClick={handleMenu}>
             <div className={menu ? 'on1' : ''}></div>
             <div className={menu ? 'on2' : ''}></div>

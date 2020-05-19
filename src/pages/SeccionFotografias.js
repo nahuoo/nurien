@@ -40,7 +40,7 @@ const SeccionFotografias = () => {
          return(
             <Seccion>
             <Slogan>
-                Portfolio
+                -Portfolio-
             </Slogan>
             <CarrouselFotos selectedIndex={selectedIndex} gallery={gallery} height={height} crop={crop}/>
             <Slogan>

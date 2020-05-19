@@ -43,18 +43,21 @@ const Boton = Styled.button`
         outline: none;
          box-shadow: none;
     }
-    @media (max-width: 650px) {
+    @media (min-width: 650px) {
         top: 65vh;
         font-size: 1em;
         height: 40px;
     }
-
+    @media (min-width: 1000px){
+      left: ${props => props.left === '85%' ? '92%' : props.left }
+    }
     @media (min-width: 1400px) {
         top: 70%;
         font-size: 2em;
         height: 40px;
         width: 60px;
         height: 60px;
+        
     }
     
 `
@@ -129,9 +132,7 @@ const Card2 = Styled.div`
     overflow: hidden;
     border-radius: 7%;
 
-    @media (min-width: 630px){
 
-    }
     img {
     position: absolute;
     top: -9999px;
@@ -140,18 +141,12 @@ const Card2 = Styled.div`
     right: -9999px;
     margin: auto;
     border-radius: 7%;
-    left:15%
     }
 
   @media (min-width: 1000px){
     img{
-      position: absolute;
       height: 100%;
       border-radius: 5%;
-      left: 0; 
-      right: 0; 
-      margin-left: auto; 
-      margin-right: auto; 
     }
 
   }

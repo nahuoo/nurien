@@ -17,7 +17,9 @@ const StyledFooter = styled.footer`
     position:absolute;
     bottom: 2%;
     letter-spacing: 1.5pt;
-    left:15%
+    left: 50%;
+    transform: translateX(-50%);
+
   }
  .contacto{
    padding-top:30px;
@@ -58,7 +60,7 @@ const StyledFooter = styled.footer`
   .direction {
     line-height: 1.5; 
   }
-  @media (min-width: 650px) {
+  @media (min-width: 630px) {
     padding: 10vh;
     height: 200vh;
     ul{
@@ -103,7 +105,6 @@ const StyledFooter = styled.footer`
     position:absolute;
     bottom: 1%;
     letter-spacing: 1.5pt;
-    left:32%
   }
   }
  
