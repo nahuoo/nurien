@@ -4,15 +4,7 @@ import { Image,Transformation } from 'cloudinary-react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import ModalImg from './Modal-img'
 
-const DivNegro = Styled.div`
-    position: absolute;}
-    top: 80vh;
-    width: 100%;
-    background: black;
-    color:white;
-    height: 15vh;
-    
-`
+
 const Boton = Styled.button`
     position: absolute;
     user-select:none;
@@ -228,7 +220,6 @@ const CarrouselFotos = ({selectedIndex, gallery, height}) => {
     return (
         isFetching ? <h2>cargando...</h2> : 
             <WrapperCarrousel id='carrousel'>
-              <DivNegro />
               <Card2>
               <TransitionGroup>
                 <CSSTransition
