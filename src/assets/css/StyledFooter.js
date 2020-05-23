@@ -118,7 +118,7 @@ const StyledFooter = styled.footer`
       font-size: 15px;
     }
     p{
-      font-size: 15px;
+      display:none ;
     }
   }
 `
