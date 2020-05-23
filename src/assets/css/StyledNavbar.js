@@ -277,7 +277,7 @@ export const SubMenu = styled.ul`
     height: ${(props) => props.subMenu ? '25vh' : '0'};
     left: -25%;
     /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
-    background: linear-gradient(180deg, rgba(0,0,0,0.6839110644257703) 0%, rgba(0,0,0,0.40940126050420167) 51%, rgba(0,0,0,0.4906337535014006) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,0.6839110644257703) 0%, rgba(0,0,0,0.40940126050420167) 51%, rgba(0,0,0,0.4906337535014006) 100%);
     transition: all 0.5s ease-in;
     & > ${SubMenuItem} > a > ${MenuLinks}{
       position: initial;
