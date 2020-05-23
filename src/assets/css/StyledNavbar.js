@@ -251,7 +251,10 @@ export const SubMenuItem = styled.li`
   text-decoration: none;
   `
 export const SubMenu = styled.ul`
-  display: ${(props) => props.subMenu ? 'flex' : 'none'};
+  transition: 1s ease-out;
+  opacity: ${(props) => props.subMenu ? 1 : 0};
+  height: ${(props) => props.subMenu ? '24vh' : '0'};
+  visibility: ${(props) => props.subMenu ?  'visible' : 'hidden'} ;
   flex-direction: column;
   position: relative;
   left: 0;
@@ -269,10 +272,12 @@ export const SubMenu = styled.ul`
   @media (min-width: 1000px) {
     position: absolute;
     width: 210px;
-    top: 100%;
+    top: 110%;
+    border-radius: 10%;
+    height: ${(props) => props.subMenu ? '25vh' : '0'};
     left: -25%;
     /* box-shadow: inset 14px -143px 100px -188px rgba(252,30,223,1); */
-    background: #000000B3;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6839110644257703) 0%, rgba(0,0,0,0.40940126050420167) 51%, rgba(0,0,0,0.4906337535014006) 100%);
     transition: all 0.5s ease-in;
     & > ${SubMenuItem} > a > ${MenuLinks}{
       position: initial;
@@ -283,6 +288,9 @@ export const SubMenu = styled.ul`
     }
     & > ${SubMenuItem} > a > ${MenuLinks}::before{
       z-index:initial;
+    }
+    @media (min-width: 1500px) {
+      height: ${(props) => props.subMenu ? '15vh' : '0'}; 
     }
   }
   `

@@ -11,8 +11,8 @@ export const AcordeonNegro = styled.div`
     @media screen and (min-width: 1000px) {
         width:98vw;
         left:10px;
-      
     }
+
 
 `
 export const Botton = styled.div`
@@ -48,6 +48,14 @@ export const Botton = styled.div`
     @media screen and (min-width: 1550px) {
         font-size: 40px;
     }
+
+    @media screen and (min-width: 1550px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-height:500px) {
+        height: ${(props) => props.abierto ? '150vh' : '50vh'};
+    }
 `
 
 
@@ -56,8 +64,7 @@ export const Clientes = styled.div`
     display: ${(props) => props.abierto ? 'flex' : 'none'};
     flex-wrap: wrap;
     flex-direction:column;
-    width:25%;
-    margin-left: 25vw;
+    width:100%;
     height:200vh;
     color: black;
     justify-content:center;
@@ -78,7 +85,7 @@ export const Clientes = styled.div`
         img{
           margin: 20px;
         }     
-        margin-left: 0;
+        margin:0;
         width:100%;
         display: ${(props) => props.abierto ? 'flex' : 'none'};
         flex-direction: row;
