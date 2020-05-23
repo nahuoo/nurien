@@ -66,7 +66,7 @@ const App = () => {
 
   return (
     <Wrapper> 
-{/*        { showIntro && <Intro End={handleIntro}/>} */}
+       { showIntro && <Intro End={handleIntro}/>} 
         <GlobalStyle />
         <Navbar acordeon={handleNosotrosFromNav}/>
         <Switch>

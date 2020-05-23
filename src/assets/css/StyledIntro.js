@@ -10,4 +10,10 @@ export const WrapperVideo = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 500;
+
+    @media screen and (max-width: 500px) {
+        display:none;
+        visibility: none;
+    }
+
     `
