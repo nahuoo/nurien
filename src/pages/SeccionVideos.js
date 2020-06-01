@@ -13,6 +13,10 @@ import NurienLyrics from '../assets/img/NurienLyrics.jpg'
 import Nurienmax from '../assets/img/Nurienmax.jpg'
 import Nurienfad from '../assets/img/Nurienfad.jpg'
 import Nurienhuellas from '../assets/img/Nurienhuellas.jpg'
+import mqdefault from '../assets/img/mqdefault.jpg'
+import musa from '../assets/img/musa.jpg'
+import iden from '../assets/img/iden.jpg'
+
 
 export const Seccion = Styled.section`
     @media (min-width: 630px){
@@ -97,7 +101,9 @@ const ruta9 = "https://www.youtube.com/embed/Qb-Ah5QfMi4"
 const ruta10 = "https://www.youtube.com/embed/GDFvEkdPO7I"
 const ruta11 = "https://www.youtube.com/embed/ALI45eyoQA0"
 const ruta12 = "https://www.youtube.com/embed/0o8CaH1aO70"
-
+const ruta13 = "https://www.youtube.com/embed/0iJQipwbur8"
+const ruta14 = "https://www.youtube.com/embed/iPQck--V-kk"
+const ruta15 = "https://www.youtube.com/embed/Iso2QehSZiE"
 
 const SeccionVideos = () => {
 
@@ -158,16 +164,28 @@ const SeccionVideos = () => {
                 <p>R CA$H x HANZO - DOPE FIENDS (Lyrics Video)</p>
             </div>
             <div>
-                <img src={Nurienmax} alt='Dope Friends' onClick={() => handleClick(ruta10)} />
+                <img src={Nurienmax} alt='un futuro' onClick={() => handleClick(ruta10)} />
                 <p>Morwen "Un Futuro" Video Oficial</p>
             </div>
             <div>
-                <img src={Nurienfad} alt='Dope Friends' onClick={() => handleClick(ruta11)} />
+                <img src={Nurienfad} alt='FAD' onClick={() => handleClick(ruta11)} />
                 <p>R.CA$H - F.A.D (Shot by NURIEN)</p>
             </div>
             <div>
-                <img src={Nurienhuellas} alt='Dope Friends' onClick={() => handleClick(ruta12)} />
+                <img src={Nurienhuellas} alt='Huellas' onClick={() => handleClick(ruta12)} />
                 <p>Pura Vida - Huellas (Video Oficial)</p>
+            </div>
+            <div>
+                <img src={mqdefault} alt='Identity' onClick={() => handleClick(ruta13)} />
+                <p>Only identity - 360 video</p>
+            </div>
+            <div>
+                <img src={musa} alt='Musacchio b-roll' onClick={() => handleClick(ruta14)} />
+                <p>Musacchio Music - B-roll</p>
+            </div>
+            <div>
+                <img src={iden} alt='Identity Light Presentation' onClick={() => handleClick(ruta15)} />
+                <p>Identity Light Presentation</p>
             </div>
             </Imagenes>
         </Seccion>

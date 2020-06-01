@@ -11,6 +11,11 @@ const StyledFooter = styled.footer`
   background: transparent;
   padding: 7vh 0;
   color: #f2f2f2;
+
+  h2{
+    text-align: center;
+    font-size: 1.5em;
+  }
   
   p{
     font-size: 8px;
