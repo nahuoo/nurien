@@ -116,7 +116,7 @@ const SeccionVideos = () => {
 
     return (
         <Seccion>
-            <Slogan>-We make your proyect reality-</Slogan>
+            <Slogan>-We make your project reality-</Slogan>
           <Video  video={cambioVideo} />
            
         <Imagenes>
