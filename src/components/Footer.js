@@ -6,7 +6,7 @@ import Formulario from './Formulario'
 function Footer() {
   return (
     <StyledFooter>
-      <h2>Escribinos</h2>
+      <h2>Contáctanos</h2>
       <div></div>
         <div>
             <Formulario />
