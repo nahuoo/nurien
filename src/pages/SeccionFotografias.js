@@ -58,7 +58,7 @@ const SeccionFotografias = () => {
                 ))}
             </GalleryWrapper>
             <Slogan>
-                -We make your proyect reality-
+                -We make your project reality-
             </Slogan>
             
         </Seccion>
