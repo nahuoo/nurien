@@ -31,11 +31,11 @@ const Formulario = () => {
   return(
     <StyledFormulario id='contacto'>
      
-    <form onSubmit={handleSubmit}>
+    <form action="https://formspree.io/mvowbkaw" method="POST" {/*onSubmit={handleSubmit*/}>
 
     {/* input del nombre */}    
       <input 
-       
+       name='Nombre'
         placeholder='Nombre...'
         type='text'
         required
@@ -43,7 +43,7 @@ const Formulario = () => {
      {/* input del localidad */}    
 
      <input 
-
+        name='Localidad'
          placeholder='Localidad...'
         type='text'
         required
@@ -61,7 +61,7 @@ const Formulario = () => {
       {/* input del mensaje */}
       
       <textarea 
-
+        name='Mensaje'
         placeholder='Escribe un mensaje...'
         cols='80'
         rows='2'
