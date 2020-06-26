@@ -31,7 +31,7 @@ const Formulario = () => {
   return(
     <StyledFormulario id='contacto'>
      
-    <form action="https://formspree.io/mvowbkaw" method="POST" {/*onSubmit={handleSubmit*/}>
+    <form action="https://formspree.io/mvowbkaw" method="POST">
 
     {/* input del nombre */}    
       <input 
